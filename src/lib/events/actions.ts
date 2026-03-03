@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import type { RsvpStatus, EventRsvp } from "@/types/database";
 
 export async function rsvpToEvent(eventId: string, status: RsvpStatus) {
@@ -43,6 +43,7 @@ export async function removeRsvp(eventId: string) {
 export async function getRsvpCounts(
   eventId: string
 ): Promise<{ going: number; maybe: number }> {
+  if (!isSupabaseConfigured()) return { going: 0, maybe: 0 };
   const supabase = await createClient();
 
   const { data } = await supabase
@@ -61,6 +62,7 @@ export async function getRsvpCounts(
 export async function getUserRsvp(
   eventId: string
 ): Promise<EventRsvp | null> {
+  if (!isSupabaseConfigured()) return null;
   const supabase = await createClient();
   const {
     data: { user },

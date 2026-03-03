@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +11,11 @@ import { localeLabels, type Locale } from "@/lib/i18n/routing";
 
 export default async function ProfilePage() {
   const t = await getTranslations("profile");
+
+  if (!isSupabaseConfigured()) {
+    redirect("/auth/login?returnTo=/profile");
+  }
+
   const supabase = await createClient();
   const {
     data: { user },

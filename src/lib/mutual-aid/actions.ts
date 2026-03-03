@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import type { MutualAidPost } from "@/types/database";
 
 export async function getMutualAidPosts(filters?: {
@@ -9,6 +9,7 @@ export async function getMutualAidPosts(filters?: {
   urgency?: string;
   status?: string;
 }): Promise<MutualAidPost[]> {
+  if (!isSupabaseConfigured()) return [];
   const supabase = await createClient();
 
   let query = supabase

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { getTopic } from "@/lib/forum/actions";
 import { ProfileCard } from "@/components/community/profile-card";
 import { ReplyCard } from "@/components/community/forum/reply-card";
@@ -30,11 +30,12 @@ export default async function TopicDetailPage({
   const { topic, replies } = await getTopic(topicId);
   if (!topic) notFound();
 
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  const isLoggedIn = !!user;
+  let isLoggedIn = false;
+  if (isSupabaseConfigured()) {
+    const supabase = await createClient();
+    const { data } = await supabase.auth.getUser();
+    isLoggedIn = !!data.user;
+  }
 
   const categoryName =
     topic.category?.name?.en || "";

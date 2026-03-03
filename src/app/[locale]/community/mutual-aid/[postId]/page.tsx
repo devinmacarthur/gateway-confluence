@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -30,6 +30,9 @@ export default async function MutualAidPostPage({
 }) {
   const { postId } = await params;
   const t = await getTranslations("mutualAid");
+
+  if (!isSupabaseConfigured()) notFound();
+
   const supabase = await createClient();
 
   const { data: post } = await supabase

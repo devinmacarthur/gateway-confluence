@@ -9,7 +9,7 @@ import { Link } from "@/lib/i18n/navigation";
 import { localeLabels } from "@/lib/i18n/routing";
 import { getRsvpCounts, getUserRsvp } from "@/lib/events/actions";
 import { RsvpButtons } from "@/components/community/rsvp-buttons";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import type { Metadata } from "next";
 
 function formatDate(dateStr: string): string {
@@ -49,10 +49,12 @@ export default async function EventDetailPage({
   const description = event.description[locale] || event.description.en;
 
   // RSVP data
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user = null;
+  if (isSupabaseConfigured()) {
+    const supabase = await createClient();
+    const { data } = await supabase.auth.getUser();
+    user = data.user;
+  }
   const counts = await getRsvpCounts(id);
   const userRsvp = await getUserRsvp(id);
 

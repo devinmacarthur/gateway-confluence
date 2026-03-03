@@ -1,9 +1,10 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import type { ForumCategory, ForumTopic, ForumReply } from "@/types/database";
 
 export async function getForumCategories(): Promise<ForumCategory[]> {
+  if (!isSupabaseConfigured()) return [];
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("forum_categories")
@@ -18,6 +19,7 @@ export async function getTopicsByCategory(
   cursor?: string,
   limit = 20
 ) {
+  if (!isSupabaseConfigured()) return { category: null, topics: [], nextCursor: null };
   const supabase = await createClient();
 
   // Get category
@@ -58,6 +60,7 @@ export async function getTopicsByCategory(
 }
 
 export async function getTopic(topicId: string) {
+  if (!isSupabaseConfigured()) return { topic: null, replies: [] };
   const supabase = await createClient();
 
   const { data: topic } = await supabase
