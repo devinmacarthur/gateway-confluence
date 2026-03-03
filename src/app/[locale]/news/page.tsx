@@ -23,7 +23,7 @@ export default function NewsPage() {
         <CardContent className="py-16 text-center">
           <p className="text-lg text-muted-foreground">{t("noArticles")}</p>
           <Button asChild variant="outline" className="mt-6 min-h-[44px]">
-            <Link href="/plan">Read the Strategic Plan</Link>
+            <Link href="/plan">{t("readPlan")}</Link>
           </Button>
         </CardContent>
       </Card>

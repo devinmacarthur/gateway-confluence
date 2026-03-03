@@ -13,7 +13,12 @@
       "readMore": "Đọc thêm",
       "share": "Chia sẻ",
       "back": "Quay lại",
-      "download": "Tải PDF"
+      "download": "Tải PDF",
+      "submit": "Gửi",
+      "search": "Tìm kiếm",
+      "filter": "Lọc",
+      "viewAll": "Xem Tất cả",
+      "learnMore": "Tìm hiểu thêm"
     },
     "footer": {
       "tagline": "Xây dựng sức mạnh cộng đồng ở Đông Portland",
@@ -39,7 +44,19 @@
       "planText": "Bảy trụ cột chiến lược hướng dẫn công việc của chúng tôi — từ an ninh nhà ở đến cơ sở hạ tầng chung.",
       "community": "Tham Gia",
       "communityText": "Gateway Confluence được xây dựng bởi và cho những người sống ở đây. Tiếng nói, ngôn ngữ, tầm nhìn của bạn đều quan trọng."
-    }
+    },
+    "stats": {
+      "languages": "40+",
+      "languagesLabel": "Ngôn ngữ được nói",
+      "residents": "50K+",
+      "residentsLabel": "Cư dân Gateway",
+      "businesses": "500+",
+      "businessesLabel": "Doanh nghiệp nhỏ",
+      "pillars": "7",
+      "pillarsLabel": "Trụ cột chiến lược"
+    },
+    "upcomingEvents": "Sự kiện Sắp tới",
+    "featuredResources": "Tài nguyên Cộng đồng"
   },
   "plan": {
     "title": "Kế hoạch Chiến lược",
@@ -63,5 +80,101 @@
       "shared-infrastructure": "Cơ sở Hạ tầng Chung"
     },
     "fallbackNotice": "Phần này chưa được dịch sang ngôn ngữ của bạn. Đang hiển thị phiên bản tiếng Anh."
+  },
+  "resources": {
+    "title": "Tài nguyên Cộng đồng",
+    "subtitle": "Các tổ chức và dịch vụ hỗ trợ cư dân Gateway",
+    "searchPlaceholder": "Tìm kiếm tài nguyên...",
+    "allCategories": "Tất cả Danh mục",
+    "categories": {
+      "housing": "Nhà ở",
+      "legal": "Hỗ trợ Pháp lý",
+      "food": "Tiếp cận Thực phẩm",
+      "health": "Sức khỏe",
+      "education": "Giáo dục",
+      "employment": "Việc làm",
+      "youth": "Thanh thiếu niên",
+      "senior": "Dịch vụ Người cao tuổi"
+    },
+    "languagesSpoken": "Ngôn ngữ",
+    "verified": "Đã xác minh",
+    "visitWebsite": "Truy cập Trang web",
+    "noResults": "Không tìm thấy tài nguyên phù hợp với tìm kiếm của bạn."
+  },
+  "events": {
+    "title": "Sự kiện Cộng đồng",
+    "subtitle": "Các buổi họp mặt, hội thảo và cuộc họp tại Gateway",
+    "upcoming": "Sắp diễn ra",
+    "past": "Sự kiện Đã qua",
+    "virtual": "Trực tuyến",
+    "inPerson": "Trực tiếp",
+    "addToCalendar": "Thêm vào Lịch",
+    "languages": "Ngôn ngữ",
+    "noEvents": "Không có sự kiện sắp tới. Hãy quay lại sớm!",
+    "details": "Chi tiết Sự kiện",
+    "when": "Khi nào",
+    "where": "Ở đâu",
+    "contact": "Liên hệ"
+  },
+  "about": {
+    "title": "Giới thiệu Gateway Confluence",
+    "subtitle": "Xây dựng sức mạnh cộng đồng tại khu Gateway, Đông Portland",
+    "mission": "Sứ mệnh",
+    "missionText": "Gateway Confluence là sáng kiến do cộng đồng dẫn dắt nhằm xây dựng một Đông Portland tập trung vào giao thông, đa văn hóa và ổn định kinh tế — nơi cư dân lâu năm có thể ở lại, doanh nghiệp nhỏ phát triển mà không bị di dời, không gian công cộng nuôi dưỡng sự thuộc về, và cơ sở hạ tầng phục vụ cuộc sống hàng ngày.",
+    "values": "Giá trị Cốt lõi",
+    "antiDisplacement": "Chống Di dời",
+    "antiDisplacementText": "Phát triển không được di dời cư dân hoặc doanh nghiệp hiện tại. Mỗi dự án củng cố cộng đồng đã có.",
+    "culturalPlurality": "Đa dạng Văn hóa",
+    "culturalPluralityText": "Đặc tính đa ngôn ngữ, đa văn hóa của Gateway là sức mạnh lớn nhất. Chúng tôi khuếch đại nó, không quản lý nó.",
+    "communityGovernance": "Quản trị Cộng đồng",
+    "communityGovernanceText": "Cư dân đưa ra quyết định về khu phố của mình. Không chỉ tư vấn. Quyền lực thực sự.",
+    "infrastructureDignity": "Cơ sở Hạ tầng là Phẩm giá",
+    "infrastructureDignityText": "Chăm sóc trẻ em, tiếp cận thực phẩm, trung tâm làm mát và đào tạo nghề là quyền lợi, không phải tiện ích."
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subtitle": "Chúng tôi muốn nghe từ bạn",
+    "nameLabel": "Tên của bạn",
+    "emailLabel": "Địa chỉ Email",
+    "phoneLabel": "Số Điện thoại",
+    "messageLabel": "Tin nhắn của bạn",
+    "languageLabel": "Ngôn ngữ Ưa thích",
+    "namePlaceholder": "Nhập tên của bạn",
+    "emailPlaceholder": "ban@example.com",
+    "phonePlaceholder": "(503) 555-0123",
+    "messagePlaceholder": "Chúng tôi có thể giúp gì? Chia sẻ ý tưởng, câu hỏi hoặc mối quan tâm...",
+    "success": "Cảm ơn bạn! Tin nhắn đã được gửi. Chúng tôi sẽ liên lạc lại sớm.",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại hoặc gửi email trực tiếp.",
+    "officeHours": "Giờ Tiếp nhận",
+    "officeHoursText": "Các cuộc họp cộng đồng được tổ chức hàng tháng. Kiểm tra trang Sự kiện để biết ngày và địa điểm.",
+    "directEmail": "Email Trực tiếp",
+    "directPhone": "Điện thoại"
+  },
+  "getInvolved": {
+    "title": "Tham gia",
+    "subtitle": "Gateway Confluence được xây dựng bởi những người sống ở đây",
+    "volunteer": "Tình nguyện",
+    "volunteerText": "Tham gia nhóm làm việc phù hợp với một trong bảy trụ cột chiến lược. Chúng tôi cần người tổ chức, phiên dịch, nghiên cứu viên và người kết nối cộng đồng.",
+    "attend": "Tham dự Cuộc họp",
+    "attendText": "Các cuộc họp cộng đồng hàng tháng mở cho tất cả mọi người. Có phiên dịch tiếng Tây Ban Nha, Việt, Trung và Nga. Có dịch vụ trông trẻ.",
+    "share": "Chia sẻ Câu chuyện",
+    "shareText": "Trải nghiệm của bạn định hình kế hoạch này. Dù bạn đã sống ở Gateway hàng thập kỷ hay mới chuyển đến, quan điểm của bạn đều quan trọng.",
+    "spread": "Lan tỏa Thông tin",
+    "spreadText": "Kể cho hàng xóm về Gateway Confluence. Chia sẻ trang web. Mời ai đó đến cuộc họp. Sức mạnh cộng đồng lớn lên từ mỗi cuộc trò chuyện.",
+    "workingGroups": "Nhóm Làm việc",
+    "housing": "An ninh Nhà ở",
+    "business": "Doanh nghiệp Nhỏ",
+    "space": "Không gian Công cộng",
+    "safety": "An toàn Cộng đồng",
+    "governance": "Quản trị",
+    "culture": "Hiện diện Văn hóa",
+    "infrastructure": "Cơ sở Hạ tầng Chung",
+    "ctaText": "Sẵn sàng tạo sự khác biệt tại Gateway?"
+  },
+  "news": {
+    "title": "Tin tức & Cập nhật",
+    "subtitle": "Thông tin mới nhất từ Gateway Confluence",
+    "noArticles": "Bài viết sắp có. Quay lại để cập nhật về công việc cộng đồng.",
+    "readPlan": "Đọc Kế hoạch Chiến lược"
   }
 }

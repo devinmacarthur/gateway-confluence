@@ -84,7 +84,7 @@ export default function GetInvolvedPage() {
       {/* CTA */}
       <div className="text-center">
         <p className="mb-6 text-lg text-muted-foreground">
-          Ready to make a difference in Gateway?
+          {t("ctaText")}
         </p>
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Button asChild size="lg" className="min-h-[44px]">

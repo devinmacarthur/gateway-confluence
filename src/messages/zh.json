@@ -13,7 +13,12 @@
       "readMore": "阅读更多",
       "share": "分享",
       "back": "返回",
-      "download": "下载PDF"
+      "download": "下载PDF",
+      "submit": "提交",
+      "search": "搜索",
+      "filter": "筛选",
+      "viewAll": "查看全部",
+      "learnMore": "了解更多"
     },
     "footer": {
       "tagline": "在东波特兰建设社区力量",
@@ -39,7 +44,19 @@
       "planText": "七个战略支柱指导我们的工作——从住房安全到共享基础设施。每一个都植根于Gateway居民的生活经验。",
       "community": "加入我们",
       "communityText": "Gateway Confluence由居住在这里的人建设，为居住在这里的人服务。您的声音、您的语言、您的愿景都很重要。"
-    }
+    },
+    "stats": {
+      "languages": "40+",
+      "languagesLabel": "使用语言",
+      "residents": "50K+",
+      "residentsLabel": "Gateway居民",
+      "businesses": "500+",
+      "businessesLabel": "小型企业",
+      "pillars": "7",
+      "pillarsLabel": "战略支柱"
+    },
+    "upcomingEvents": "即将举行的活动",
+    "featuredResources": "社区资源"
   },
   "plan": {
     "title": "战略计划",
@@ -63,5 +80,101 @@
       "shared-infrastructure": "共享基础设施"
     },
     "fallbackNotice": "此部分尚未翻译成您的语言。正在显示英文版本。"
+  },
+  "resources": {
+    "title": "社区资源",
+    "subtitle": "支持Gateway居民的组织和服务",
+    "searchPlaceholder": "搜索资源...",
+    "allCategories": "所有类别",
+    "categories": {
+      "housing": "住房",
+      "legal": "法律援助",
+      "food": "食品获取",
+      "health": "健康",
+      "education": "教育",
+      "employment": "就业",
+      "youth": "青少年",
+      "senior": "老年服务"
+    },
+    "languagesSpoken": "语言",
+    "verified": "已验证",
+    "visitWebsite": "访问网站",
+    "noResults": "没有找到匹配的资源。"
+  },
+  "events": {
+    "title": "社区活动",
+    "subtitle": "Gateway的聚会、研讨会和会议",
+    "upcoming": "即将举行",
+    "past": "过去的活动",
+    "virtual": "线上",
+    "inPerson": "线下",
+    "addToCalendar": "添加到日历",
+    "languages": "语言",
+    "noEvents": "暂无即将举行的活动。请稍后查看！",
+    "details": "活动详情",
+    "when": "时间",
+    "where": "地点",
+    "contact": "联系方式"
+  },
+  "about": {
+    "title": "关于Gateway Confluence",
+    "subtitle": "在东波特兰Gateway区建设社区力量",
+    "mission": "我们的使命",
+    "missionText": "Gateway Confluence是一项社区驱动的倡议，旨在建设以交通为中心、文化多元、经济稳定的东波特兰——让老居民留下来，让小企业不受排挤地蓬勃发展，让公共空间培养归属感，让基础设施服务于日常生活而非投机增长。",
+    "values": "我们的价值观",
+    "antiDisplacement": "反对搬迁",
+    "antiDisplacementText": "发展不应排挤现有居民或企业。每个项目都应加强已有社区。",
+    "culturalPlurality": "文化多元性",
+    "culturalPluralityText": "Gateway多语言、多文化的特征是我们最大的优势。我们放大它，而非管控它。",
+    "communityGovernance": "社区治理",
+    "communityGovernanceText": "居民对自己的社区做出决定。不是咨询性的，是真正的权力。",
+    "infrastructureDignity": "基础设施即尊严",
+    "infrastructureDignityText": "托儿、食品获取、降温中心和职业培训是权利，不是奢侈品。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "我们期待听到您的声音",
+    "nameLabel": "您的姓名",
+    "emailLabel": "电子邮件",
+    "phoneLabel": "电话号码",
+    "messageLabel": "您的留言",
+    "languageLabel": "首选语言",
+    "namePlaceholder": "输入您的姓名",
+    "emailPlaceholder": "you@example.com",
+    "phonePlaceholder": "(503) 555-0123",
+    "messagePlaceholder": "我们能帮什么？分享您的想法、问题或关注...",
+    "success": "谢谢您！您的消息已发送。我们将尽快回复。",
+    "error": "出了点问题。请重试或直接给我们发邮件。",
+    "officeHours": "办公时间",
+    "officeHoursText": "社区会议每月举行。查看活动页面了解日期和地点。",
+    "directEmail": "直接邮件",
+    "directPhone": "电话"
+  },
+  "getInvolved": {
+    "title": "参与其中",
+    "subtitle": "Gateway Confluence由居住在这里的人建设",
+    "volunteer": "志愿服务",
+    "volunteerText": "加入与七个战略支柱之一对应的工作小组。我们需要组织者、翻译、研究人员和社区联络人。",
+    "attend": "参加会议",
+    "attendText": "我们的月度社区会议向所有人开放。提供西班牙语、越南语、中文和俄语口译。提供托儿服务。",
+    "share": "分享您的故事",
+    "shareText": "您的经历塑造了这个计划。无论您在Gateway住了几十年还是刚搬来，您的观点都很重要。",
+    "spread": "传播信息",
+    "spreadText": "告诉邻居关于Gateway Confluence。分享我们的网站。邀请某人参加会议。社区力量在每次对话中成长。",
+    "workingGroups": "工作小组",
+    "housing": "住房安全",
+    "business": "小型企业",
+    "space": "公共空间",
+    "safety": "社区安全",
+    "governance": "治理",
+    "culture": "文化可见性",
+    "infrastructure": "共享基础设施",
+    "ctaText": "准备好在Gateway做出改变了吗？"
+  },
+  "news": {
+    "title": "新闻与更新",
+    "subtitle": "Gateway Confluence的最新消息",
+    "noArticles": "文章即将推出。请回来查看我们社区工作的更新。",
+    "readPlan": "阅读战略计划"
   }
 }

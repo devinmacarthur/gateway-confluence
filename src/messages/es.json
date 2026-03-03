@@ -13,7 +13,12 @@
       "readMore": "Leer más",
       "share": "Compartir",
       "back": "Volver",
-      "download": "Descargar PDF"
+      "download": "Descargar PDF",
+      "submit": "Enviar",
+      "search": "Buscar",
+      "filter": "Filtrar",
+      "viewAll": "Ver Todo",
+      "learnMore": "Más Información"
     },
     "footer": {
       "tagline": "Construyendo poder comunitario en el este de Portland",
@@ -39,7 +44,19 @@
       "planText": "Siete pilares estratégicos guían nuestro trabajo — desde la seguridad de la vivienda hasta la infraestructura compartida. Cada uno basado en la experiencia vivida de los residentes de Gateway.",
       "community": "Únase",
       "communityText": "Gateway Confluence es construido por y para las personas que viven aquí. Su voz, su idioma, su visión importa."
-    }
+    },
+    "stats": {
+      "languages": "40+",
+      "languagesLabel": "Idiomas hablados",
+      "residents": "50K+",
+      "residentsLabel": "Residentes de Gateway",
+      "businesses": "500+",
+      "businessesLabel": "Pequeños negocios",
+      "pillars": "7",
+      "pillarsLabel": "Pilares estratégicos"
+    },
+    "upcomingEvents": "Próximos Eventos",
+    "featuredResources": "Recursos Comunitarios"
   },
   "plan": {
     "title": "Plan Estratégico",
@@ -63,5 +80,101 @@
       "shared-infrastructure": "Infraestructura Compartida"
     },
     "fallbackNotice": "Esta sección aún no ha sido traducida a su idioma. Mostrando la versión en inglés."
+  },
+  "resources": {
+    "title": "Recursos Comunitarios",
+    "subtitle": "Organizaciones y servicios que apoyan a los residentes de Gateway",
+    "searchPlaceholder": "Buscar recursos...",
+    "allCategories": "Todas las Categorías",
+    "categories": {
+      "housing": "Vivienda",
+      "legal": "Asistencia Legal",
+      "food": "Acceso a Alimentos",
+      "health": "Salud",
+      "education": "Educación",
+      "employment": "Empleo",
+      "youth": "Juventud",
+      "senior": "Servicios para Adultos Mayores"
+    },
+    "languagesSpoken": "Idiomas",
+    "verified": "Verificado",
+    "visitWebsite": "Visitar Sitio Web",
+    "noResults": "No se encontraron recursos que coincidan con su búsqueda."
+  },
+  "events": {
+    "title": "Eventos Comunitarios",
+    "subtitle": "Reuniones, talleres y encuentros en Gateway",
+    "upcoming": "Próximos",
+    "past": "Eventos Pasados",
+    "virtual": "Virtual",
+    "inPerson": "Presencial",
+    "addToCalendar": "Agregar al Calendario",
+    "languages": "Idiomas",
+    "noEvents": "No hay eventos próximos. ¡Vuelva pronto!",
+    "details": "Detalles del Evento",
+    "when": "Cuándo",
+    "where": "Dónde",
+    "contact": "Contacto"
+  },
+  "about": {
+    "title": "Acerca de Gateway Confluence",
+    "subtitle": "Construyendo poder comunitario en el distrito Gateway del este de Portland",
+    "mission": "Nuestra Misión",
+    "missionText": "Gateway Confluence es una iniciativa impulsada por la comunidad para construir un este de Portland centrado en el tránsito, culturalmente plural y económicamente estable — donde los residentes de toda la vida puedan quedarse, los pequeños negocios prosperen sin desplazamiento, el espacio público fomente la pertenencia y la infraestructura sirva a la vida diaria en lugar del crecimiento especulativo.",
+    "values": "Nuestros Valores",
+    "antiDisplacement": "Anti-Desplazamiento",
+    "antiDisplacementText": "El desarrollo no debe desplazar a los residentes ni negocios existentes. Cada proyecto fortalece la comunidad que ya existe.",
+    "culturalPlurality": "Pluralidad Cultural",
+    "culturalPluralityText": "El carácter multilingüe y multicultural de Gateway es nuestra mayor fortaleza. Lo amplificamos, no lo gestionamos.",
+    "communityGovernance": "Gobernanza Comunitaria",
+    "communityGovernanceText": "Los residentes toman decisiones sobre su propio vecindario. No solo consultivo. Poder real.",
+    "infrastructureDignity": "Infraestructura como Dignidad",
+    "infrastructureDignityText": "El cuidado infantil, el acceso a alimentos, los centros de enfriamiento y la capacitación laboral son derechos, no lujos."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Nos encantaría saber de usted",
+    "nameLabel": "Su Nombre",
+    "emailLabel": "Correo Electrónico",
+    "phoneLabel": "Número de Teléfono",
+    "messageLabel": "Su Mensaje",
+    "languageLabel": "Idioma Preferido",
+    "namePlaceholder": "Ingrese su nombre",
+    "emailPlaceholder": "usted@ejemplo.com",
+    "phonePlaceholder": "(503) 555-0123",
+    "messagePlaceholder": "¿Cómo podemos ayudar? Comparta sus ideas, preguntas o inquietudes...",
+    "success": "¡Gracias! Su mensaje ha sido enviado. Nos comunicaremos con usted pronto.",
+    "error": "Algo salió mal. Por favor intente de nuevo o envíenos un correo directamente.",
+    "officeHours": "Horario de Atención",
+    "officeHoursText": "Las reuniones comunitarias se realizan mensualmente. Consulte la página de Eventos para fechas y lugares.",
+    "directEmail": "Correo Directo",
+    "directPhone": "Teléfono"
+  },
+  "getInvolved": {
+    "title": "Participe",
+    "subtitle": "Gateway Confluence es construido por las personas que viven aquí",
+    "volunteer": "Sea Voluntario",
+    "volunteerText": "Únase a un grupo de trabajo alineado con uno de nuestros siete pilares estratégicos. Necesitamos organizadores, traductores, investigadores y conectores comunitarios.",
+    "attend": "Asista a una Reunión",
+    "attendText": "Nuestras reuniones comunitarias mensuales están abiertas a todos. Interpretación disponible en español, vietnamita, chino y ruso. Se proporciona cuidado infantil.",
+    "share": "Comparta Su Historia",
+    "shareText": "Su experiencia da forma a este plan. Ya sea que haya vivido en Gateway durante décadas o acaba de mudarse, su perspectiva importa.",
+    "spread": "Corra la Voz",
+    "spreadText": "Cuéntele a sus vecinos sobre Gateway Confluence. Comparta nuestro sitio web. Invite a alguien a una reunión. El poder comunitario crece una conversación a la vez.",
+    "workingGroups": "Grupos de Trabajo",
+    "housing": "Seguridad de Vivienda",
+    "business": "Pequeños Negocios",
+    "space": "Espacio Público",
+    "safety": "Seguridad Comunitaria",
+    "governance": "Gobernanza",
+    "culture": "Visibilidad Cultural",
+    "infrastructure": "Infraestructura Compartida",
+    "ctaText": "¿Listo para hacer la diferencia en Gateway?"
+  },
+  "news": {
+    "title": "Noticias y Actualizaciones",
+    "subtitle": "Lo último de Gateway Confluence",
+    "noArticles": "Artículos próximamente. Vuelva para actualizaciones sobre nuestro trabajo comunitario.",
+    "readPlan": "Leer el Plan Estratégico"
   }
 }

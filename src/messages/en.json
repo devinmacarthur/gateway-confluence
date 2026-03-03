@@ -168,11 +168,13 @@
     "safety": "Community Safety",
     "governance": "Governance",
     "culture": "Cultural Visibility",
-    "infrastructure": "Shared Infrastructure"
+    "infrastructure": "Shared Infrastructure",
+    "ctaText": "Ready to make a difference in Gateway?"
   },
   "news": {
     "title": "News & Updates",
     "subtitle": "The latest from Gateway Confluence",
-    "noArticles": "Articles coming soon. Check back for updates on our community work."
+    "noArticles": "Articles coming soon. Check back for updates on our community work.",
+    "readPlan": "Read the Strategic Plan"
   }
 }
