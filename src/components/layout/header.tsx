@@ -10,6 +10,10 @@ import { useState } from "react";
 const navItems = [
   { href: "/", key: "home" },
   { href: "/plan", key: "plan" },
+  { href: "/resources", key: "resources" },
+  { href: "/events", key: "events" },
+  { href: "/get-involved", key: "getInvolved" },
+  { href: "/about", key: "about" },
 ] as const;
 
 export function Header() {

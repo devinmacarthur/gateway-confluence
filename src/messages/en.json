@@ -13,7 +13,12 @@
       "readMore": "Read more",
       "share": "Share",
       "back": "Back",
-      "download": "Download PDF"
+      "download": "Download PDF",
+      "submit": "Submit",
+      "search": "Search",
+      "filter": "Filter",
+      "viewAll": "View All",
+      "learnMore": "Learn More"
     },
     "footer": {
       "tagline": "Building community power in East Portland",
@@ -39,7 +44,19 @@
       "planText": "Seven strategic pillars guide our work — from housing security to shared infrastructure. Each one grounded in the lived experience of Gateway residents.",
       "community": "Join Us",
       "communityText": "Gateway Confluence is built by and for the people who live here. Your voice, your language, your vision matters."
-    }
+    },
+    "stats": {
+      "languages": "40+",
+      "languagesLabel": "Languages spoken",
+      "residents": "50K+",
+      "residentsLabel": "Gateway residents",
+      "businesses": "500+",
+      "businessesLabel": "Small businesses",
+      "pillars": "7",
+      "pillarsLabel": "Strategic pillars"
+    },
+    "upcomingEvents": "Upcoming Events",
+    "featuredResources": "Community Resources"
   },
   "plan": {
     "title": "Strategic Plan",
@@ -63,5 +80,99 @@
       "shared-infrastructure": "Shared Infrastructure"
     },
     "fallbackNotice": "This section has not yet been translated into your language. Showing English version."
+  },
+  "resources": {
+    "title": "Community Resources",
+    "subtitle": "Organizations and services supporting Gateway residents",
+    "searchPlaceholder": "Search resources...",
+    "allCategories": "All Categories",
+    "categories": {
+      "housing": "Housing",
+      "legal": "Legal Aid",
+      "food": "Food Access",
+      "health": "Health",
+      "education": "Education",
+      "employment": "Employment",
+      "youth": "Youth",
+      "senior": "Senior Services"
+    },
+    "languagesSpoken": "Languages",
+    "verified": "Verified",
+    "visitWebsite": "Visit Website",
+    "noResults": "No resources found matching your search."
+  },
+  "events": {
+    "title": "Community Events",
+    "subtitle": "Gatherings, workshops, and meetings in Gateway",
+    "upcoming": "Upcoming",
+    "past": "Past Events",
+    "virtual": "Virtual",
+    "inPerson": "In Person",
+    "addToCalendar": "Add to Calendar",
+    "languages": "Languages",
+    "noEvents": "No upcoming events. Check back soon!",
+    "details": "Event Details",
+    "when": "When",
+    "where": "Where",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Gateway Confluence",
+    "subtitle": "Building community power in East Portland's Gateway district",
+    "mission": "Our Mission",
+    "missionText": "Gateway Confluence is a community-driven initiative to build a transit-centered, culturally plural, economically stable East Portland — where longtime residents can remain, small businesses can thrive without displacement, public space fosters belonging, and infrastructure serves daily life rather than speculative growth.",
+    "values": "Our Values",
+    "antiDisplacement": "Anti-Displacement",
+    "antiDisplacementText": "Development must not displace existing residents or businesses. Every project strengthens the community that already exists.",
+    "culturalPlurality": "Cultural Plurality",
+    "culturalPluralityText": "Gateway's multilingual, multicultural character is our greatest strength. We amplify it, not manage it.",
+    "communityGovernance": "Community Governance",
+    "communityGovernanceText": "Residents make decisions about their own neighborhood. Not advisory. Real power.",
+    "infrastructureDignity": "Infrastructure as Dignity",
+    "infrastructureDignityText": "Childcare, food access, cooling centers, and workforce training are rights, not amenities."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "nameLabel": "Your Name",
+    "emailLabel": "Email Address",
+    "phoneLabel": "Phone Number",
+    "messageLabel": "Your Message",
+    "languageLabel": "Preferred Language",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "you@example.com",
+    "phonePlaceholder": "(503) 555-0123",
+    "messagePlaceholder": "How can we help? Share your ideas, questions, or concerns...",
+    "success": "Thank you! Your message has been sent. We'll get back to you soon.",
+    "error": "Something went wrong. Please try again or email us directly.",
+    "officeHours": "Office Hours",
+    "officeHoursText": "Community meetings are held monthly. Check the Events page for dates and locations.",
+    "directEmail": "Direct Email",
+    "directPhone": "Phone"
+  },
+  "getInvolved": {
+    "title": "Get Involved",
+    "subtitle": "Gateway Confluence is built by the people who live here",
+    "volunteer": "Volunteer",
+    "volunteerText": "Join a working group aligned with one of our seven strategic pillars. We need organizers, translators, researchers, and community connectors.",
+    "attend": "Attend a Meeting",
+    "attendText": "Our monthly community meetings are open to everyone. Interpretation is available in Spanish, Vietnamese, Chinese, and Russian. Childcare provided.",
+    "share": "Share Your Story",
+    "shareText": "Your experience shapes this plan. Whether you've lived in Gateway for decades or just moved in, your perspective matters.",
+    "spread": "Spread the Word",
+    "spreadText": "Tell your neighbors about Gateway Confluence. Share our website. Invite someone to a meeting. Community power grows one conversation at a time.",
+    "workingGroups": "Working Groups",
+    "housing": "Housing Security",
+    "business": "Small Business",
+    "space": "Public Space",
+    "safety": "Community Safety",
+    "governance": "Governance",
+    "culture": "Cultural Visibility",
+    "infrastructure": "Shared Infrastructure"
+  },
+  "news": {
+    "title": "News & Updates",
+    "subtitle": "The latest from Gateway Confluence",
+    "noArticles": "Articles coming soon. Check back for updates on our community work."
   }
 }
