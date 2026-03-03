@@ -3,6 +3,7 @@
     "nav": {
       "home": "Home",
       "plan": "Strategic Plan",
+      "community": "Community",
       "resources": "Resources",
       "events": "Events",
       "news": "News",
@@ -176,5 +177,143 @@
     "subtitle": "The latest from Gateway Confluence",
     "noArticles": "Articles coming soon. Check back for updates on our community work.",
     "readPlan": "Read the Strategic Plan"
+  },
+  "auth": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out",
+    "profile": "Profile",
+    "community": "Community",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "displayName": "Display Name",
+    "displayNameHint": "This is how others will see you. Real names are not required.",
+    "phone": "Phone Number",
+    "phoneHint": "We'll send a verification code via SMS",
+    "sendCode": "Send Code",
+    "codeSent": "Code sent! Check your phone.",
+    "verificationCode": "Verification Code",
+    "verifyCode": "Verify Code",
+    "forgotPassword": "Forgot password?",
+    "resetPassword": "Reset Password",
+    "sendResetLink": "Send Reset Link",
+    "resetSent": "Check your email for a password reset link.",
+    "newPassword": "New Password",
+    "passwordUpdated": "Your password has been updated. You can now log in.",
+    "checkEmail": "Check Your Email",
+    "confirmEmail": "We sent a confirmation link to your email. Please click it to activate your account.",
+    "preferredLanguage": "Preferred Language",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "orContinueWith": "Or continue with",
+    "google": "Continue with Google",
+    "tabs": {
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "errors": {
+      "passwordMismatch": "Passwords do not match.",
+      "weakPassword": "Password must be at least 8 characters."
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "edit": "Edit Profile",
+    "bio": "Bio",
+    "bioPlaceholder": "Tell the community a bit about yourself...",
+    "neighborhood": "Neighborhood",
+    "neighborhoodPlaceholder": "e.g. Gateway, Hazelwood, Parkrose",
+    "interests": "Interests",
+    "interestsPlaceholder": "e.g. gardening, cooking, housing advocacy",
+    "languages": "Languages",
+    "memberSince": "Member since",
+    "updated": "Profile updated successfully.",
+    "save": "Save Changes",
+    "role": {
+      "member": "Member",
+      "moderator": "Moderator",
+      "admin": "Admin"
+    }
+  },
+  "community": {
+    "title": "Community Hub",
+    "subtitle": "Connect, share, and support your neighbors in Gateway",
+    "forum": "Discussion Forum",
+    "forumDescription": "Join conversations about neighborhood issues, share ideas, and connect with fellow Gateway residents.",
+    "mutualAid": "Mutual Aid",
+    "mutualAidDescription": "Offer help or request support. From food and housing to translation and childcare.",
+    "events": "Events",
+    "eventsDescription": "Find community gatherings, workshops, and meetings happening in Gateway."
+  },
+  "forum": {
+    "title": "Discussion Forum",
+    "newTopic": "New Topic",
+    "noTopics": "No topics yet. Be the first to start a conversation!",
+    "topicTitle": "Title",
+    "topicTitlePlaceholder": "What would you like to discuss?",
+    "topicBody": "Body",
+    "topicBodyPlaceholder": "Share your thoughts, questions, or ideas...",
+    "language": "Language",
+    "postTopic": "Post Topic",
+    "pinned": "Pinned",
+    "locked": "Locked",
+    "repliesCount": "{count} replies",
+    "noReplies": "No replies yet. Be the first to respond!",
+    "replyPlaceholder": "Write your reply...",
+    "postReply": "Post Reply",
+    "loginToPost": "Log in to join the conversation"
+  },
+  "mutualAid": {
+    "title": "Mutual Aid Board",
+    "subtitle": "Neighbors helping neighbors in Gateway",
+    "newPost": "New Post",
+    "noPosts": "No posts yet. Create one to offer help or request support!",
+    "all": "All",
+    "offer": "Offer",
+    "request": "Request",
+    "type": "Type",
+    "postTitle": "Title",
+    "titlePlaceholder": "What do you need or what can you offer?",
+    "description": "Description",
+    "descriptionPlaceholder": "Provide details so people can understand how to help or what you're offering...",
+    "category": "Category",
+    "urgency": "Urgency",
+    "language": "Language",
+    "contactMethod": "Contact Method",
+    "contactPlaceholder": "How should people reach you? (optional)",
+    "submitPost": "Submit Post",
+    "contactInfo": "Contact",
+    "responses": "Responses",
+    "noResponses": "No responses yet.",
+    "responsePlaceholder": "Write your response...",
+    "responseSent": "Response sent!",
+    "sendResponse": "Send Response",
+    "markFulfilled": "Mark as Fulfilled",
+    "closePost": "Close Post",
+    "categories": {
+      "food": "Food",
+      "housing": "Housing",
+      "transport": "Transportation",
+      "childcare": "Childcare",
+      "translation": "Translation",
+      "other": "Other"
+    },
+    "urgencyLevels": {
+      "low": "Low",
+      "normal": "Normal",
+      "urgent": "Urgent"
+    },
+    "status": {
+      "open": "Open",
+      "fulfilled": "Fulfilled",
+      "closed": "Closed"
+    }
+  },
+  "rsvp": {
+    "going": "Going",
+    "maybe": "Maybe",
+    "notGoing": "Not Going",
+    "attendees": "{going} going · {maybe} maybe"
   }
 }

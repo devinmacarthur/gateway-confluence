@@ -7,6 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "@/lib/i18n/navigation";
 import { localeLabels } from "@/lib/i18n/routing";
+import { getRsvpCounts, getUserRsvp } from "@/lib/events/actions";
+import { RsvpButtons } from "@/components/community/rsvp-buttons";
+import { createClient } from "@/lib/supabase/server";
 import type { Metadata } from "next";
 
 function formatDate(dateStr: string): string {
@@ -44,6 +47,14 @@ export default async function EventDetailPage({
 
   const title = event.title[locale] || event.title.en;
   const description = event.description[locale] || event.description.en;
+
+  // RSVP data
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  const counts = await getRsvpCounts(id);
+  const userRsvp = await getUserRsvp(id);
 
   // Build iCal data
   const icalStart = new Date(event.start_time)
@@ -151,7 +162,7 @@ export default async function EventDetailPage({
 
         <div>
           <p className="leading-7 text-foreground/90">{description}</p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild variant="outline" className="min-h-[44px]">
               <a href={icalUrl} download={`${event.id}.ics`}>
                 {t("addToCalendar")}
@@ -160,6 +171,16 @@ export default async function EventDetailPage({
           </div>
         </div>
       </div>
+
+      <Separator className="my-8" />
+
+      <RsvpButtons
+        eventId={id}
+        currentStatus={userRsvp?.status || null}
+        goingCount={counts.going}
+        maybeCount={counts.maybe}
+        isLoggedIn={!!user}
+      />
     </div>
   );
 }

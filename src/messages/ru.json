@@ -7,7 +7,8 @@
       "events": "События",
       "news": "Новости",
       "getInvolved": "Присоединиться",
-      "about": "О нас"
+      "about": "О нас",
+      "community": "Сообщество"
     },
     "actions": {
       "readMore": "Читать далее",
@@ -176,5 +177,143 @@
     "subtitle": "Последние новости Gateway Confluence",
     "noArticles": "Статьи скоро появятся. Возвращайтесь за обновлениями о нашей общественной работе.",
     "readPlan": "Читать Стратегический план"
+  },
+  "auth": {
+    "login": "Войти",
+    "signup": "Регистрация",
+    "logout": "Выйти",
+    "profile": "Профиль",
+    "community": "Сообщество",
+    "email": "Электронная почта",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "displayName": "Отображаемое имя",
+    "displayNameHint": "Так вас будут видеть другие. Настоящее имя не требуется.",
+    "phone": "Номер телефона",
+    "phoneHint": "Мы отправим код подтверждения по SMS",
+    "sendCode": "Отправить код",
+    "codeSent": "Код отправлен! Проверьте телефон.",
+    "verificationCode": "Код подтверждения",
+    "verifyCode": "Подтвердить",
+    "forgotPassword": "Забыли пароль?",
+    "resetPassword": "Сбросить пароль",
+    "sendResetLink": "Отправить ссылку",
+    "resetSent": "Проверьте почту для ссылки на сброс пароля.",
+    "newPassword": "Новый пароль",
+    "passwordUpdated": "Ваш пароль обновлён. Теперь вы можете войти.",
+    "checkEmail": "Проверьте почту",
+    "confirmEmail": "Мы отправили ссылку для подтверждения на вашу почту. Нажмите на неё для активации аккаунта.",
+    "preferredLanguage": "Предпочтительный язык",
+    "noAccount": "Нет аккаунта?",
+    "haveAccount": "Уже есть аккаунт?",
+    "orContinueWith": "Или продолжить через",
+    "google": "Продолжить с Google",
+    "tabs": {
+      "email": "Почта",
+      "phone": "Телефон"
+    },
+    "errors": {
+      "passwordMismatch": "Пароли не совпадают.",
+      "weakPassword": "Пароль должен содержать не менее 8 символов."
+    }
+  },
+  "profile": {
+    "title": "Профиль",
+    "edit": "Редактировать профиль",
+    "bio": "О себе",
+    "bioPlaceholder": "Расскажите сообществу немного о себе...",
+    "neighborhood": "Район",
+    "neighborhoodPlaceholder": "напр. Gateway, Hazelwood, Parkrose",
+    "interests": "Интересы",
+    "interestsPlaceholder": "напр. садоводство, кулинария, жилищная защита",
+    "languages": "Языки",
+    "memberSince": "Участник с",
+    "updated": "Профиль успешно обновлён.",
+    "save": "Сохранить изменения",
+    "role": {
+      "member": "Участник",
+      "moderator": "Модератор",
+      "admin": "Администратор"
+    }
+  },
+  "community": {
+    "title": "Центр Сообщества",
+    "subtitle": "Общайтесь, делитесь и поддерживайте соседей в Gateway",
+    "forum": "Форум Обсуждений",
+    "forumDescription": "Участвуйте в обсуждениях о районе, делитесь идеями и общайтесь с жителями Gateway.",
+    "mutualAid": "Взаимопомощь",
+    "mutualAidDescription": "Предложите помощь или попросите поддержку. От еды и жилья до перевода и ухода за детьми.",
+    "events": "Мероприятия",
+    "eventsDescription": "Найдите общественные встречи, семинары и собрания в Gateway."
+  },
+  "forum": {
+    "title": "Форум Обсуждений",
+    "newTopic": "Новая Тема",
+    "noTopics": "Тем пока нет. Будьте первым, кто начнёт обсуждение!",
+    "topicTitle": "Заголовок",
+    "topicTitlePlaceholder": "Что вы хотите обсудить?",
+    "topicBody": "Содержание",
+    "topicBodyPlaceholder": "Поделитесь мыслями, вопросами или идеями...",
+    "language": "Язык",
+    "postTopic": "Опубликовать тему",
+    "pinned": "Закреплено",
+    "locked": "Заблокировано",
+    "repliesCount": "{count} ответов",
+    "noReplies": "Ответов пока нет. Будьте первым!",
+    "replyPlaceholder": "Напишите ответ...",
+    "postReply": "Опубликовать ответ",
+    "loginToPost": "Войдите, чтобы участвовать в обсуждении"
+  },
+  "mutualAid": {
+    "title": "Доска Взаимопомощи",
+    "subtitle": "Соседи помогают соседям в Gateway",
+    "newPost": "Новое Объявление",
+    "noPosts": "Объявлений пока нет. Создайте одно, чтобы предложить помощь или попросить поддержку!",
+    "all": "Все",
+    "offer": "Предложение",
+    "request": "Запрос",
+    "type": "Тип",
+    "postTitle": "Заголовок",
+    "titlePlaceholder": "Что вам нужно или что вы можете предложить?",
+    "description": "Описание",
+    "descriptionPlaceholder": "Предоставьте детали, чтобы люди поняли, как помочь или что вы предлагаете...",
+    "category": "Категория",
+    "urgency": "Срочность",
+    "language": "Язык",
+    "contactMethod": "Способ связи",
+    "contactPlaceholder": "Как с вами связаться? (необязательно)",
+    "submitPost": "Отправить объявление",
+    "contactInfo": "Контакт",
+    "responses": "Ответы",
+    "noResponses": "Ответов пока нет.",
+    "responsePlaceholder": "Напишите ваш ответ...",
+    "responseSent": "Ответ отправлен!",
+    "sendResponse": "Отправить ответ",
+    "markFulfilled": "Отметить выполненным",
+    "closePost": "Закрыть объявление",
+    "categories": {
+      "food": "Еда",
+      "housing": "Жильё",
+      "transport": "Транспорт",
+      "childcare": "Уход за детьми",
+      "translation": "Перевод",
+      "other": "Другое"
+    },
+    "urgencyLevels": {
+      "low": "Низкая",
+      "normal": "Обычная",
+      "urgent": "Срочная"
+    },
+    "status": {
+      "open": "Открыто",
+      "fulfilled": "Выполнено",
+      "closed": "Закрыто"
+    }
+  },
+  "rsvp": {
+    "going": "Пойду",
+    "maybe": "Возможно",
+    "notGoing": "Не пойду",
+    "attendees": "{going} пойдут · {maybe} возможно"
   }
 }

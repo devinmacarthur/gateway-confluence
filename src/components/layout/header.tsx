@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/lib/i18n/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
+import { UserMenu } from "@/components/auth/user-menu";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import { useState } from "react";
 const navItems = [
   { href: "/", key: "home" },
   { href: "/plan", key: "plan" },
+  { href: "/community", key: "community" },
   { href: "/resources", key: "resources" },
   { href: "/events", key: "events" },
   { href: "/get-involved", key: "getInvolved" },
@@ -56,6 +58,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <UserMenu />
           <div className="hidden md:block">
             <LocaleSwitcher />
           </div>

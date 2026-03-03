@@ -7,7 +7,8 @@
       "events": "Sự kiện",
       "news": "Tin tức",
       "getInvolved": "Tham gia",
-      "about": "Giới thiệu"
+      "about": "Giới thiệu",
+      "community": "Cộng Đồng"
     },
     "actions": {
       "readMore": "Đọc thêm",
@@ -176,5 +177,143 @@
     "subtitle": "Thông tin mới nhất từ Gateway Confluence",
     "noArticles": "Bài viết sắp có. Quay lại để cập nhật về công việc cộng đồng.",
     "readPlan": "Đọc Kế hoạch Chiến lược"
+  },
+  "auth": {
+    "login": "Đăng Nhập",
+    "signup": "Đăng Ký",
+    "logout": "Đăng Xuất",
+    "profile": "Hồ Sơ",
+    "community": "Cộng Đồng",
+    "email": "Email",
+    "password": "Mật Khẩu",
+    "confirmPassword": "Xác Nhận Mật Khẩu",
+    "displayName": "Tên Hiển Thị",
+    "displayNameHint": "Đây là cách người khác sẽ thấy bạn. Không bắt buộc dùng tên thật.",
+    "phone": "Số Điện Thoại",
+    "phoneHint": "Chúng tôi sẽ gửi mã xác nhận qua SMS",
+    "sendCode": "Gửi Mã",
+    "codeSent": "Đã gửi mã! Kiểm tra điện thoại của bạn.",
+    "verificationCode": "Mã Xác Nhận",
+    "verifyCode": "Xác Nhận Mã",
+    "forgotPassword": "Quên mật khẩu?",
+    "resetPassword": "Đặt Lại Mật Khẩu",
+    "sendResetLink": "Gửi Liên Kết",
+    "resetSent": "Kiểm tra email để lấy liên kết đặt lại mật khẩu.",
+    "newPassword": "Mật Khẩu Mới",
+    "passwordUpdated": "Mật khẩu đã được cập nhật. Bạn có thể đăng nhập ngay.",
+    "checkEmail": "Kiểm Tra Email",
+    "confirmEmail": "Chúng tôi đã gửi liên kết xác nhận đến email của bạn. Nhấp vào đó để kích hoạt tài khoản.",
+    "preferredLanguage": "Ngôn Ngữ Ưa Thích",
+    "noAccount": "Chưa có tài khoản?",
+    "haveAccount": "Đã có tài khoản?",
+    "orContinueWith": "Hoặc tiếp tục với",
+    "google": "Tiếp tục với Google",
+    "tabs": {
+      "email": "Email",
+      "phone": "Điện Thoại"
+    },
+    "errors": {
+      "passwordMismatch": "Mật khẩu không khớp.",
+      "weakPassword": "Mật khẩu phải có ít nhất 8 ký tự."
+    }
+  },
+  "profile": {
+    "title": "Hồ Sơ",
+    "edit": "Chỉnh Sửa Hồ Sơ",
+    "bio": "Giới Thiệu",
+    "bioPlaceholder": "Giới thiệu bản thân với cộng đồng...",
+    "neighborhood": "Khu Phố",
+    "neighborhoodPlaceholder": "vd. Gateway, Hazelwood, Parkrose",
+    "interests": "Sở Thích",
+    "interestsPlaceholder": "vd. làm vườn, nấu ăn, vận động nhà ở",
+    "languages": "Ngôn Ngữ",
+    "memberSince": "Thành viên từ",
+    "updated": "Hồ sơ đã được cập nhật.",
+    "save": "Lưu Thay Đổi",
+    "role": {
+      "member": "Thành Viên",
+      "moderator": "Điều Hành Viên",
+      "admin": "Quản Trị Viên"
+    }
+  },
+  "community": {
+    "title": "Trung Tâm Cộng Đồng",
+    "subtitle": "Kết nối, chia sẻ và hỗ trợ hàng xóm tại Gateway",
+    "forum": "Diễn Đàn Thảo Luận",
+    "forumDescription": "Tham gia thảo luận về các vấn đề khu phố, chia sẻ ý tưởng và kết nối với cư dân Gateway.",
+    "mutualAid": "Hỗ Trợ Lẫn Nhau",
+    "mutualAidDescription": "Đề nghị giúp đỡ hoặc yêu cầu hỗ trợ. Từ thực phẩm, nhà ở đến dịch thuật và chăm sóc trẻ em.",
+    "events": "Sự Kiện",
+    "eventsDescription": "Tìm các buổi họp mặt, hội thảo và cuộc họp cộng đồng tại Gateway."
+  },
+  "forum": {
+    "title": "Diễn Đàn Thảo Luận",
+    "newTopic": "Chủ Đề Mới",
+    "noTopics": "Chưa có chủ đề nào. Hãy là người đầu tiên bắt đầu cuộc trò chuyện!",
+    "topicTitle": "Tiêu Đề",
+    "topicTitlePlaceholder": "Bạn muốn thảo luận về điều gì?",
+    "topicBody": "Nội Dung",
+    "topicBodyPlaceholder": "Chia sẻ suy nghĩ, câu hỏi hoặc ý tưởng của bạn...",
+    "language": "Ngôn Ngữ",
+    "postTopic": "Đăng Chủ Đề",
+    "pinned": "Đã Ghim",
+    "locked": "Đã Khóa",
+    "repliesCount": "{count} phản hồi",
+    "noReplies": "Chưa có phản hồi nào. Hãy là người đầu tiên trả lời!",
+    "replyPlaceholder": "Viết phản hồi của bạn...",
+    "postReply": "Đăng Phản Hồi",
+    "loginToPost": "Đăng nhập để tham gia cuộc trò chuyện"
+  },
+  "mutualAid": {
+    "title": "Bảng Hỗ Trợ Lẫn Nhau",
+    "subtitle": "Hàng xóm giúp đỡ hàng xóm tại Gateway",
+    "newPost": "Bài Đăng Mới",
+    "noPosts": "Chưa có bài đăng nào. Tạo một bài để đề nghị giúp đỡ hoặc yêu cầu hỗ trợ!",
+    "all": "Tất Cả",
+    "offer": "Đề Nghị",
+    "request": "Yêu Cầu",
+    "type": "Loại",
+    "postTitle": "Tiêu Đề",
+    "titlePlaceholder": "Bạn cần gì hoặc bạn có thể đề nghị gì?",
+    "description": "Mô Tả",
+    "descriptionPlaceholder": "Cung cấp chi tiết để mọi người hiểu cách giúp đỡ hoặc bạn đang đề nghị gì...",
+    "category": "Danh Mục",
+    "urgency": "Mức Độ Khẩn Cấp",
+    "language": "Ngôn Ngữ",
+    "contactMethod": "Phương Thức Liên Lạc",
+    "contactPlaceholder": "Mọi người nên liên lạc bạn bằng cách nào? (tùy chọn)",
+    "submitPost": "Gửi Bài Đăng",
+    "contactInfo": "Liên Lạc",
+    "responses": "Phản Hồi",
+    "noResponses": "Chưa có phản hồi nào.",
+    "responsePlaceholder": "Viết phản hồi của bạn...",
+    "responseSent": "Đã gửi phản hồi!",
+    "sendResponse": "Gửi Phản Hồi",
+    "markFulfilled": "Đánh Dấu Hoàn Thành",
+    "closePost": "Đóng Bài Đăng",
+    "categories": {
+      "food": "Thực Phẩm",
+      "housing": "Nhà Ở",
+      "transport": "Giao Thông",
+      "childcare": "Chăm Sóc Trẻ Em",
+      "translation": "Dịch Thuật",
+      "other": "Khác"
+    },
+    "urgencyLevels": {
+      "low": "Thấp",
+      "normal": "Bình Thường",
+      "urgent": "Khẩn Cấp"
+    },
+    "status": {
+      "open": "Đang Mở",
+      "fulfilled": "Hoàn Thành",
+      "closed": "Đã Đóng"
+    }
+  },
+  "rsvp": {
+    "going": "Sẽ Đến",
+    "maybe": "Có Thể",
+    "notGoing": "Không Đến",
+    "attendees": "{going} sẽ đến · {maybe} có thể"
   }
 }

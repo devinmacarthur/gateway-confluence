@@ -7,7 +7,8 @@
       "events": "活动",
       "news": "新闻",
       "getInvolved": "参与",
-      "about": "关于"
+      "about": "关于",
+      "community": "社区"
     },
     "actions": {
       "readMore": "阅读更多",
@@ -176,5 +177,143 @@
     "subtitle": "Gateway Confluence的最新消息",
     "noArticles": "文章即将推出。请回来查看我们社区工作的更新。",
     "readPlan": "阅读战略计划"
+  },
+  "auth": {
+    "login": "登录",
+    "signup": "注册",
+    "logout": "退出",
+    "profile": "个人资料",
+    "community": "社区",
+    "email": "电子邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "displayName": "显示名称",
+    "displayNameHint": "这是其他人看到您的方式。不需要使用真名。",
+    "phone": "电话号码",
+    "phoneHint": "我们将通过短信发送验证码",
+    "sendCode": "发送验证码",
+    "codeSent": "验证码已发送！请查看手机。",
+    "verificationCode": "验证码",
+    "verifyCode": "验证",
+    "forgotPassword": "忘记密码？",
+    "resetPassword": "重置密码",
+    "sendResetLink": "发送重置链接",
+    "resetSent": "请查看邮箱中的密码重置链接。",
+    "newPassword": "新密码",
+    "passwordUpdated": "密码已更新。您现在可以登录了。",
+    "checkEmail": "请查看邮箱",
+    "confirmEmail": "我们已向您的邮箱发送了确认链接。请点击链接激活您的账户。",
+    "preferredLanguage": "首选语言",
+    "noAccount": "还没有账户？",
+    "haveAccount": "已有账户？",
+    "orContinueWith": "或通过以下方式继续",
+    "google": "使用Google继续",
+    "tabs": {
+      "email": "邮箱",
+      "phone": "电话"
+    },
+    "errors": {
+      "passwordMismatch": "密码不匹配。",
+      "weakPassword": "密码至少需要8个字符。"
+    }
+  },
+  "profile": {
+    "title": "个人资料",
+    "edit": "编辑资料",
+    "bio": "简介",
+    "bioPlaceholder": "向社区介绍一下自己...",
+    "neighborhood": "社区",
+    "neighborhoodPlaceholder": "如 Gateway、Hazelwood、Parkrose",
+    "interests": "兴趣",
+    "interestsPlaceholder": "如 园艺、烹饪、住房倡导",
+    "languages": "语言",
+    "memberSince": "注册时间",
+    "updated": "资料更新成功。",
+    "save": "保存更改",
+    "role": {
+      "member": "成员",
+      "moderator": "版主",
+      "admin": "管理员"
+    }
+  },
+  "community": {
+    "title": "社区中心",
+    "subtitle": "在Gateway与邻居联系、分享和互助",
+    "forum": "讨论论坛",
+    "forumDescription": "参与社区话题讨论，分享想法，与Gateway居民建立联系。",
+    "mutualAid": "互助互济",
+    "mutualAidDescription": "提供帮助或寻求支持。包括食物、住房、翻译和托儿等。",
+    "events": "活动",
+    "eventsDescription": "查找Gateway的社区聚会、工作坊和会议。"
+  },
+  "forum": {
+    "title": "讨论论坛",
+    "newTopic": "新话题",
+    "noTopics": "还没有话题。成为第一个开始讨论的人！",
+    "topicTitle": "标题",
+    "topicTitlePlaceholder": "您想讨论什么？",
+    "topicBody": "内容",
+    "topicBodyPlaceholder": "分享您的想法、问题或建议...",
+    "language": "语言",
+    "postTopic": "发布话题",
+    "pinned": "置顶",
+    "locked": "已锁定",
+    "repliesCount": "{count} 条回复",
+    "noReplies": "还没有回复。成为第一个回复的人！",
+    "replyPlaceholder": "写下您的回复...",
+    "postReply": "发布回复",
+    "loginToPost": "登录后参与讨论"
+  },
+  "mutualAid": {
+    "title": "互助板",
+    "subtitle": "Gateway邻居互帮互助",
+    "newPost": "新帖子",
+    "noPosts": "还没有帖子。创建一个来提供帮助或寻求支持！",
+    "all": "全部",
+    "offer": "提供",
+    "request": "求助",
+    "type": "类型",
+    "postTitle": "标题",
+    "titlePlaceholder": "您需要什么或可以提供什么？",
+    "description": "描述",
+    "descriptionPlaceholder": "提供详细信息，让人们了解如何帮助或您提供的内容...",
+    "category": "类别",
+    "urgency": "紧急程度",
+    "language": "语言",
+    "contactMethod": "联系方式",
+    "contactPlaceholder": "别人如何联系您？（可选）",
+    "submitPost": "提交帖子",
+    "contactInfo": "联系方式",
+    "responses": "回复",
+    "noResponses": "还没有回复。",
+    "responsePlaceholder": "写下您的回复...",
+    "responseSent": "回复已发送！",
+    "sendResponse": "发送回复",
+    "markFulfilled": "标记为已完成",
+    "closePost": "关闭帖子",
+    "categories": {
+      "food": "食物",
+      "housing": "住房",
+      "transport": "交通",
+      "childcare": "托儿",
+      "translation": "翻译",
+      "other": "其他"
+    },
+    "urgencyLevels": {
+      "low": "低",
+      "normal": "普通",
+      "urgent": "紧急"
+    },
+    "status": {
+      "open": "开放",
+      "fulfilled": "已完成",
+      "closed": "已关闭"
+    }
+  },
+  "rsvp": {
+    "going": "参加",
+    "maybe": "可能",
+    "notGoing": "不参加",
+    "attendees": "{going} 人参加 · {maybe} 人可能"
   }
 }

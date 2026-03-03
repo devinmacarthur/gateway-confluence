@@ -3,6 +3,7 @@
     "nav": {
       "home": "Inicio",
       "plan": "Plan Estratégico",
+      "community": "Comunidad",
       "resources": "Recursos",
       "events": "Eventos",
       "news": "Noticias",
@@ -176,5 +177,143 @@
     "subtitle": "Lo último de Gateway Confluence",
     "noArticles": "Artículos próximamente. Vuelva para actualizaciones sobre nuestro trabajo comunitario.",
     "readPlan": "Leer el Plan Estratégico"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "logout": "Cerrar Sesión",
+    "profile": "Perfil",
+    "community": "Comunidad",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "displayName": "Nombre para Mostrar",
+    "displayNameHint": "Así es como otros te verán. No se requieren nombres reales.",
+    "phone": "Número de Teléfono",
+    "phoneHint": "Enviaremos un código de verificación por SMS",
+    "sendCode": "Enviar Código",
+    "codeSent": "¡Código enviado! Revisa tu teléfono.",
+    "verificationCode": "Código de Verificación",
+    "verifyCode": "Verificar Código",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "resetPassword": "Restablecer Contraseña",
+    "sendResetLink": "Enviar Enlace",
+    "resetSent": "Revisa tu correo para un enlace de restablecimiento.",
+    "newPassword": "Nueva Contraseña",
+    "passwordUpdated": "Tu contraseña ha sido actualizada. Ya puedes iniciar sesión.",
+    "checkEmail": "Revisa Tu Correo",
+    "confirmEmail": "Enviamos un enlace de confirmación a tu correo. Haz clic en él para activar tu cuenta.",
+    "preferredLanguage": "Idioma Preferido",
+    "noAccount": "¿No tienes cuenta?",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "orContinueWith": "O continuar con",
+    "google": "Continuar con Google",
+    "tabs": {
+      "email": "Correo",
+      "phone": "Teléfono"
+    },
+    "errors": {
+      "passwordMismatch": "Las contraseñas no coinciden.",
+      "weakPassword": "La contraseña debe tener al menos 8 caracteres."
+    }
+  },
+  "profile": {
+    "title": "Perfil",
+    "edit": "Editar Perfil",
+    "bio": "Biografía",
+    "bioPlaceholder": "Cuéntale a la comunidad un poco sobre ti...",
+    "neighborhood": "Vecindario",
+    "neighborhoodPlaceholder": "ej. Gateway, Hazelwood, Parkrose",
+    "interests": "Intereses",
+    "interestsPlaceholder": "ej. jardinería, cocina, defensa de vivienda",
+    "languages": "Idiomas",
+    "memberSince": "Miembro desde",
+    "updated": "Perfil actualizado exitosamente.",
+    "save": "Guardar Cambios",
+    "role": {
+      "member": "Miembro",
+      "moderator": "Moderador",
+      "admin": "Administrador"
+    }
+  },
+  "community": {
+    "title": "Centro Comunitario",
+    "subtitle": "Conecta, comparte y apoya a tus vecinos en Gateway",
+    "forum": "Foro de Discusión",
+    "forumDescription": "Participa en conversaciones sobre temas del vecindario, comparte ideas y conecta con otros residentes de Gateway.",
+    "mutualAid": "Ayuda Mutua",
+    "mutualAidDescription": "Ofrece ayuda o solicita apoyo. Desde comida y vivienda hasta traducción y cuidado de niños.",
+    "events": "Eventos",
+    "eventsDescription": "Encuentra reuniones comunitarias, talleres y juntas en Gateway."
+  },
+  "forum": {
+    "title": "Foro de Discusión",
+    "newTopic": "Nuevo Tema",
+    "noTopics": "No hay temas aún. ¡Sé el primero en iniciar una conversación!",
+    "topicTitle": "Título",
+    "topicTitlePlaceholder": "¿Qué te gustaría discutir?",
+    "topicBody": "Contenido",
+    "topicBodyPlaceholder": "Comparte tus pensamientos, preguntas o ideas...",
+    "language": "Idioma",
+    "postTopic": "Publicar Tema",
+    "pinned": "Fijado",
+    "locked": "Bloqueado",
+    "repliesCount": "{count} respuestas",
+    "noReplies": "No hay respuestas aún. ¡Sé el primero en responder!",
+    "replyPlaceholder": "Escribe tu respuesta...",
+    "postReply": "Publicar Respuesta",
+    "loginToPost": "Inicia sesión para unirte a la conversación"
+  },
+  "mutualAid": {
+    "title": "Tablero de Ayuda Mutua",
+    "subtitle": "Vecinos ayudando a vecinos en Gateway",
+    "newPost": "Nueva Publicación",
+    "noPosts": "No hay publicaciones aún. ¡Crea una para ofrecer ayuda o solicitar apoyo!",
+    "all": "Todos",
+    "offer": "Oferta",
+    "request": "Solicitud",
+    "type": "Tipo",
+    "postTitle": "Título",
+    "titlePlaceholder": "¿Qué necesitas o qué puedes ofrecer?",
+    "description": "Descripción",
+    "descriptionPlaceholder": "Proporciona detalles para que la gente entienda cómo ayudar o qué ofreces...",
+    "category": "Categoría",
+    "urgency": "Urgencia",
+    "language": "Idioma",
+    "contactMethod": "Método de Contacto",
+    "contactPlaceholder": "¿Cómo pueden contactarte? (opcional)",
+    "submitPost": "Enviar Publicación",
+    "contactInfo": "Contacto",
+    "responses": "Respuestas",
+    "noResponses": "No hay respuestas aún.",
+    "responsePlaceholder": "Escribe tu respuesta...",
+    "responseSent": "¡Respuesta enviada!",
+    "sendResponse": "Enviar Respuesta",
+    "markFulfilled": "Marcar como Cumplido",
+    "closePost": "Cerrar Publicación",
+    "categories": {
+      "food": "Comida",
+      "housing": "Vivienda",
+      "transport": "Transporte",
+      "childcare": "Cuidado de Niños",
+      "translation": "Traducción",
+      "other": "Otro"
+    },
+    "urgencyLevels": {
+      "low": "Baja",
+      "normal": "Normal",
+      "urgent": "Urgente"
+    },
+    "status": {
+      "open": "Abierto",
+      "fulfilled": "Cumplido",
+      "closed": "Cerrado"
+    }
+  },
+  "rsvp": {
+    "going": "Asistiré",
+    "maybe": "Tal Vez",
+    "notGoing": "No Asistiré",
+    "attendees": "{going} asistirán · {maybe} tal vez"
   }
 }
