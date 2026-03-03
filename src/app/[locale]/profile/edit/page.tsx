@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { updateProfile } from "@/lib/profile/actions";
-import { createClient } from "@/lib/supabase/client";
+import { createClient, isSupabaseConfiguredClient } from "@/lib/supabase/client";
 import { localeLabels, type Locale } from "@/lib/i18n/routing";
 import type { Profile } from "@/types/database";
 
@@ -25,6 +25,10 @@ export default function EditProfilePage() {
 
   useEffect(() => {
     async function loadProfile() {
+      if (!isSupabaseConfiguredClient()) {
+        router.push("/auth/login");
+        return;
+      }
       const supabase = createClient();
       const {
         data: { user },
