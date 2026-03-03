@@ -1,0 +1,67 @@
+{
+  "common": {
+    "nav": {
+      "home": "Trang chủ",
+      "plan": "Kế hoạch Chiến lược",
+      "resources": "Tài nguyên",
+      "events": "Sự kiện",
+      "news": "Tin tức",
+      "getInvolved": "Tham gia",
+      "about": "Giới thiệu"
+    },
+    "actions": {
+      "readMore": "Đọc thêm",
+      "share": "Chia sẻ",
+      "back": "Quay lại",
+      "download": "Tải PDF"
+    },
+    "footer": {
+      "tagline": "Xây dựng sức mạnh cộng đồng ở Đông Portland",
+      "address": "Khu Gateway, Portland OR 97220",
+      "copyright": "Gateway Confluence"
+    },
+    "language": "Ngôn ngữ"
+  },
+  "home": {
+    "hero": {
+      "title": "Gateway Confluence",
+      "subtitle": "Nơi Gốc Rễ Cộng Đồng Bền Vững",
+      "description": "Một nền tảng cộng đồng tập trung vào giao thông, đa văn hóa và ổn định kinh tế cho Đông Portland — nơi cư dân lâu năm có thể ở lại, doanh nghiệp nhỏ có thể phát triển và không gian công cộng nuôi dưỡng sự thuộc về."
+    },
+    "cta": {
+      "readPlan": "Đọc Kế hoạch Chiến lược",
+      "getInvolved": "Tham gia"
+    },
+    "sections": {
+      "vision": "Tầm Nhìn",
+      "visionText": "Chúng tôi hình dung một cộng đồng nơi cơ sở hạ tầng phục vụ cuộc sống hàng ngày thay vì tăng trưởng đầu cơ.",
+      "plan": "Kế Hoạch",
+      "planText": "Bảy trụ cột chiến lược hướng dẫn công việc của chúng tôi — từ an ninh nhà ở đến cơ sở hạ tầng chung.",
+      "community": "Tham Gia",
+      "communityText": "Gateway Confluence được xây dựng bởi và cho những người sống ở đây. Tiếng nói, ngôn ngữ, tầm nhìn của bạn đều quan trọng."
+    }
+  },
+  "plan": {
+    "title": "Kế hoạch Chiến lược",
+    "subtitle": "Lộ trình do cộng đồng thúc đẩy cho tương lai của Gateway",
+    "tableOfContents": "Mục lục",
+    "status": {
+      "draft": "Bản nháp",
+      "review": "Đang xem xét",
+      "adopted": "Đã thông qua"
+    },
+    "readTime": "{minutes} phút đọc",
+    "lastUpdated": "Cập nhật lần cuối",
+    "sections": {
+      "executive-summary": "Tóm tắt Điều hành",
+      "housing-security": "An ninh Nhà ở",
+      "small-business": "Hệ sinh thái Doanh nghiệp Nhỏ",
+      "public-space": "Kích hoạt Không gian Công cộng",
+      "community-safety": "An toàn Cộng đồng",
+      "institutional-coherence": "Gắn kết Thể chế",
+      "cultural-visibility": "Hiện diện Văn hóa",
+      "shared-infrastructure": "Cơ sở Hạ tầng Chung"
+    },
+    "fallbackNotice": "Phần này chưa được dịch sang ngôn ngữ của bạn. Đang hiển thị phiên bản tiếng Anh."
+  }
+}

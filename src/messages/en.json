@@ -1,0 +1,67 @@
+{
+  "common": {
+    "nav": {
+      "home": "Home",
+      "plan": "Strategic Plan",
+      "resources": "Resources",
+      "events": "Events",
+      "news": "News",
+      "getInvolved": "Get Involved",
+      "about": "About"
+    },
+    "actions": {
+      "readMore": "Read more",
+      "share": "Share",
+      "back": "Back",
+      "download": "Download PDF"
+    },
+    "footer": {
+      "tagline": "Building community power in East Portland",
+      "address": "Gateway District, Portland OR 97220",
+      "copyright": "Gateway Confluence"
+    },
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Gateway Confluence",
+      "subtitle": "Where Community Roots Run Deep",
+      "description": "A transit-centered, culturally plural, economically stable community platform for East Portland — where longtime residents can remain, small businesses can thrive, and public space fosters belonging."
+    },
+    "cta": {
+      "readPlan": "Read the Strategic Plan",
+      "getInvolved": "Get Involved"
+    },
+    "sections": {
+      "vision": "Our Vision",
+      "visionText": "We envision a community where infrastructure serves daily life rather than speculative growth. A staying community, not a replacement community.",
+      "plan": "The Plan",
+      "planText": "Seven strategic pillars guide our work — from housing security to shared infrastructure. Each one grounded in the lived experience of Gateway residents.",
+      "community": "Join Us",
+      "communityText": "Gateway Confluence is built by and for the people who live here. Your voice, your language, your vision matters."
+    }
+  },
+  "plan": {
+    "title": "Strategic Plan",
+    "subtitle": "A community-driven roadmap for Gateway's future",
+    "tableOfContents": "Table of Contents",
+    "status": {
+      "draft": "Draft",
+      "review": "Under Review",
+      "adopted": "Adopted"
+    },
+    "readTime": "{minutes} min read",
+    "lastUpdated": "Last updated",
+    "sections": {
+      "executive-summary": "Executive Summary",
+      "housing-security": "Housing Security",
+      "small-business": "Small Business Ecosystem",
+      "public-space": "Public Space Activation",
+      "community-safety": "Community Safety",
+      "institutional-coherence": "Institutional Coherence",
+      "cultural-visibility": "Cultural Visibility",
+      "shared-infrastructure": "Shared Infrastructure"
+    },
+    "fallbackNotice": "This section has not yet been translated into your language. Showing English version."
+  }
+}

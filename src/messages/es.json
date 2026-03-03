@@ -1,0 +1,67 @@
+{
+  "common": {
+    "nav": {
+      "home": "Inicio",
+      "plan": "Plan Estratégico",
+      "resources": "Recursos",
+      "events": "Eventos",
+      "news": "Noticias",
+      "getInvolved": "Participe",
+      "about": "Acerca de"
+    },
+    "actions": {
+      "readMore": "Leer más",
+      "share": "Compartir",
+      "back": "Volver",
+      "download": "Descargar PDF"
+    },
+    "footer": {
+      "tagline": "Construyendo poder comunitario en el este de Portland",
+      "address": "Distrito Gateway, Portland OR 97220",
+      "copyright": "Gateway Confluence"
+    },
+    "language": "Idioma"
+  },
+  "home": {
+    "hero": {
+      "title": "Gateway Confluence",
+      "subtitle": "Donde las Raíces Comunitarias Son Profundas",
+      "description": "Una plataforma comunitaria centrada en el tránsito, culturalmente plural y económicamente estable para el este de Portland — donde los residentes de toda la vida pueden quedarse, los pequeños negocios pueden prosperar y el espacio público fomenta la pertenencia."
+    },
+    "cta": {
+      "readPlan": "Leer el Plan Estratégico",
+      "getInvolved": "Participe"
+    },
+    "sections": {
+      "vision": "Nuestra Visión",
+      "visionText": "Imaginamos una comunidad donde la infraestructura sirve a la vida diaria en lugar del crecimiento especulativo. Una comunidad que permanece, no una comunidad de reemplazo.",
+      "plan": "El Plan",
+      "planText": "Siete pilares estratégicos guían nuestro trabajo — desde la seguridad de la vivienda hasta la infraestructura compartida. Cada uno basado en la experiencia vivida de los residentes de Gateway.",
+      "community": "Únase",
+      "communityText": "Gateway Confluence es construido por y para las personas que viven aquí. Su voz, su idioma, su visión importa."
+    }
+  },
+  "plan": {
+    "title": "Plan Estratégico",
+    "subtitle": "Una hoja de ruta comunitaria para el futuro de Gateway",
+    "tableOfContents": "Tabla de Contenidos",
+    "status": {
+      "draft": "Borrador",
+      "review": "En Revisión",
+      "adopted": "Adoptado"
+    },
+    "readTime": "{minutes} min de lectura",
+    "lastUpdated": "Última actualización",
+    "sections": {
+      "executive-summary": "Resumen Ejecutivo",
+      "housing-security": "Seguridad de Vivienda",
+      "small-business": "Ecosistema de Pequeños Negocios",
+      "public-space": "Activación del Espacio Público",
+      "community-safety": "Seguridad Comunitaria",
+      "institutional-coherence": "Coherencia Institucional",
+      "cultural-visibility": "Visibilidad Cultural",
+      "shared-infrastructure": "Infraestructura Compartida"
+    },
+    "fallbackNotice": "Esta sección aún no ha sido traducida a su idioma. Mostrando la versión en inglés."
+  }
+}

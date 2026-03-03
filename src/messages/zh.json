@@ -1,0 +1,67 @@
+{
+  "common": {
+    "nav": {
+      "home": "首页",
+      "plan": "战略计划",
+      "resources": "资源",
+      "events": "活动",
+      "news": "新闻",
+      "getInvolved": "参与",
+      "about": "关于"
+    },
+    "actions": {
+      "readMore": "阅读更多",
+      "share": "分享",
+      "back": "返回",
+      "download": "下载PDF"
+    },
+    "footer": {
+      "tagline": "在东波特兰建设社区力量",
+      "address": "Gateway区，波特兰 OR 97220",
+      "copyright": "Gateway Confluence"
+    },
+    "language": "语言"
+  },
+  "home": {
+    "hero": {
+      "title": "Gateway Confluence",
+      "subtitle": "社区根基深厚",
+      "description": "一个以交通为中心、文化多元、经济稳定的东波特兰社区平台——让老居民留下来，让小企业蓬勃发展，让公共空间培养归属感。"
+    },
+    "cta": {
+      "readPlan": "阅读战略计划",
+      "getInvolved": "参与其中"
+    },
+    "sections": {
+      "vision": "我们的愿景",
+      "visionText": "我们设想一个基础设施服务于日常生活而非投机增长的社区。一个留守社区，而非替代社区。",
+      "plan": "计划",
+      "planText": "七个战略支柱指导我们的工作——从住房安全到共享基础设施。每一个都植根于Gateway居民的生活经验。",
+      "community": "加入我们",
+      "communityText": "Gateway Confluence由居住在这里的人建设，为居住在这里的人服务。您的声音、您的语言、您的愿景都很重要。"
+    }
+  },
+  "plan": {
+    "title": "战略计划",
+    "subtitle": "社区驱动的Gateway未来路线图",
+    "tableOfContents": "目录",
+    "status": {
+      "draft": "草案",
+      "review": "审核中",
+      "adopted": "已通过"
+    },
+    "readTime": "{minutes}分钟阅读",
+    "lastUpdated": "最后更新",
+    "sections": {
+      "executive-summary": "执行摘要",
+      "housing-security": "住房安全",
+      "small-business": "小企业生态系统",
+      "public-space": "公共空间激活",
+      "community-safety": "社区安全",
+      "institutional-coherence": "制度协调",
+      "cultural-visibility": "文化可见性",
+      "shared-infrastructure": "共享基础设施"
+    },
+    "fallbackNotice": "此部分尚未翻译成您的语言。正在显示英文版本。"
+  }
+}
