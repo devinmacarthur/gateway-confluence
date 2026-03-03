@@ -1,5 +1,4 @@
-import { getLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { getTranslations, getLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import {
@@ -36,7 +35,7 @@ export default async function PlanSectionPage({
   params: Promise<{ section: string }>;
 }) {
   const { section: slug } = await params;
-  const t = useTranslations("plan");
+  const t = await getTranslations("plan");
   const locale = await getLocale();
 
   const slugs = await getPlanSlugs();

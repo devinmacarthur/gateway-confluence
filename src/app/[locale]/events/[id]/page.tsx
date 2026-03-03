@@ -1,5 +1,4 @@
-import { getLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { getTranslations, getLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { sampleEvents } from "@/lib/sample-data";
 import { Badge } from "@/components/ui/badge";
@@ -37,7 +36,7 @@ export default async function EventDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const t = useTranslations("events");
+  const t = await getTranslations("events");
   const locale = await getLocale();
 
   const event = sampleEvents.find((e) => e.id === id);

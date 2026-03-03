@@ -1,5 +1,4 @@
-import { useTranslations } from "next-intl";
-import { getLocale } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { sampleEvents } from "@/lib/sample-data";
 import { EventCard } from "@/components/community/event-card";
 import type { Metadata } from "next";
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function EventsPage() {
-  const t = useTranslations("events");
+  const t = await getTranslations("events");
   const locale = await getLocale();
 
   const now = new Date();

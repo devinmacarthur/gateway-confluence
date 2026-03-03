@@ -1,5 +1,4 @@
-import { useTranslations } from "next-intl";
-import { getLocale } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { getAllPlanSections } from "@/lib/mdx/get-plan-sections";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,7 +23,7 @@ const statusColors = {
 };
 
 export default async function PlanPage() {
-  const t = useTranslations("plan");
+  const t = await getTranslations("plan");
   const locale = await getLocale();
   const sections = await getAllPlanSections(locale);
 
