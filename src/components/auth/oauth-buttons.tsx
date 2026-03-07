@@ -2,12 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { signInWithGoogle } from "@/lib/auth/actions";
-import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
 export function OAuthButtons() {
-  const t = useTranslations("auth");
-  const locale = useLocale();
   const searchParams = useSearchParams();
   const returnTo = searchParams.get("returnTo") || "/community";
 
@@ -19,7 +16,7 @@ export function OAuthButtons() {
         </div>
         <div className="relative flex justify-center text-xs uppercase">
           <span className="bg-background px-2 text-muted-foreground">
-            {t("orContinueWith")}
+            Or continue with
           </span>
         </div>
       </div>
@@ -27,7 +24,7 @@ export function OAuthButtons() {
         type="button"
         variant="outline"
         className="w-full min-h-[44px]"
-        onClick={() => signInWithGoogle(locale, returnTo)}
+        onClick={() => signInWithGoogle(returnTo)}
       >
         <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
           <path
@@ -47,7 +44,7 @@ export function OAuthButtons() {
             fill="#EA4335"
           />
         </svg>
-        {t("google")}
+        Continue with Google
       </Button>
     </div>
   );

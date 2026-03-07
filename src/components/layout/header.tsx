@@ -1,25 +1,23 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Link, usePathname } from "@/lib/i18n/navigation";
-import { LocaleSwitcher } from "./locale-switcher";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { UserMenu } from "@/components/auth/user-menu";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 
 const navItems = [
-  { href: "/", key: "home" },
-  { href: "/plan", key: "plan" },
-  { href: "/community", key: "community" },
-  { href: "/resources", key: "resources" },
-  { href: "/events", key: "events" },
-  { href: "/get-involved", key: "getInvolved" },
-  { href: "/about", key: "about" },
+  { href: "/", key: "home", label: "Home" },
+  { href: "/plan", key: "plan", label: "Strategic Plan" },
+  { href: "/community", key: "community", label: "Community" },
+  { href: "/resources", key: "resources", label: "Resources" },
+  { href: "/events", key: "events", label: "Events" },
+  { href: "/get-involved", key: "getInvolved", label: "Get Involved" },
+  { href: "/about", key: "about", label: "About" },
 ] as const;
 
 export function Header() {
-  const t = useTranslations("common.nav");
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -51,7 +49,7 @@ export function Header() {
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
               >
-                {t(item.key)}
+                {item.label}
               </Link>
             );
           })}
@@ -59,9 +57,6 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <UserMenu />
-          <div className="hidden md:block">
-            <LocaleSwitcher />
-          </div>
 
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
@@ -101,14 +96,11 @@ export function Header() {
                           : "text-muted-foreground hover:bg-muted hover:text-foreground"
                       }`}
                     >
-                      {t(item.key)}
+                      {item.label}
                     </Link>
                   );
                 })}
               </nav>
-              <div className="mt-6 border-t pt-4">
-                <LocaleSwitcher />
-              </div>
             </SheetContent>
           </Sheet>
         </div>

@@ -5,11 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { signInWithPhone, verifyPhoneOtp } from "@/lib/auth/actions";
-import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
 export function PhoneAuth() {
-  const t = useTranslations("auth");
   const router = useRouter();
   const [phone, setPhone] = useState("");
   const [code, setCode] = useState("");
@@ -49,7 +47,7 @@ export function PhoneAuth() {
       {step === "phone" ? (
         <>
           <div className="space-y-2">
-            <Label htmlFor="phone">{t("phone")}</Label>
+            <Label htmlFor="phone">Phone Number</Label>
             <Input
               id="phone"
               type="tel"
@@ -58,7 +56,7 @@ export function PhoneAuth() {
               placeholder="+1 (503) 555-0123"
               className="min-h-[44px]"
             />
-            <p className="text-xs text-muted-foreground">{t("phoneHint")}</p>
+            <p className="text-xs text-muted-foreground">{"We'll send a verification code via SMS"}</p>
           </div>
           <Button
             type="button"
@@ -66,14 +64,14 @@ export function PhoneAuth() {
             disabled={loading || !phone}
             className="w-full min-h-[44px]"
           >
-            {t("sendCode")}
+            Send Code
           </Button>
         </>
       ) : (
         <>
-          <p className="text-sm text-muted-foreground">{t("codeSent")}</p>
+          <p className="text-sm text-muted-foreground">Code sent! Check your phone.</p>
           <div className="space-y-2">
-            <Label htmlFor="otp">{t("verificationCode")}</Label>
+            <Label htmlFor="otp">Verification Code</Label>
             <Input
               id="otp"
               value={code}
@@ -89,7 +87,7 @@ export function PhoneAuth() {
             disabled={loading || code.length < 6}
             className="w-full min-h-[44px]"
           >
-            {t("verifyCode")}
+            Verify Code
           </Button>
         </>
       )}

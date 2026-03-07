@@ -9,14 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Link } from "@/lib/i18n/navigation";
+import Link from "next/link";
 import { signOut } from "@/lib/auth/actions";
 import { useUser } from "@/hooks/use-user";
-import { useTranslations } from "next-intl";
 
 export function UserMenu() {
   const { user, profile, loading } = useUser();
-  const t = useTranslations("auth");
 
   if (loading) {
     return <div className="h-9 w-9 animate-pulse rounded-full bg-muted" />;
@@ -25,7 +23,7 @@ export function UserMenu() {
   if (!user) {
     return (
       <Button asChild variant="outline" size="sm" className="min-h-[44px]">
-        <Link href="/auth/login">{t("login")}</Link>
+        <Link href="/auth/login">Log In</Link>
       </Button>
     );
   }
@@ -53,17 +51,17 @@ export function UserMenu() {
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <Link href="/profile">{t("profile")}</Link>
+          <Link href="/profile">Profile</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href="/community">{t("community")}</Link>
+          <Link href="/community">Community</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onClick={() => signOut()}
           className="text-destructive"
         >
-          {t("logout")}
+          Log Out
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

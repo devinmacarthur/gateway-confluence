@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useTranslations, useLocale } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,7 +14,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { localeLabels } from "@/lib/i18n/routing";
 import { createTopic } from "@/lib/forum/actions";
 
 interface TopicFormProps {
@@ -23,8 +21,6 @@ interface TopicFormProps {
 }
 
 export function TopicForm({ categorySlug }: TopicFormProps) {
-  const t = useTranslations("forum");
-  const locale = useLocale();
   const router = useRouter();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -51,37 +47,37 @@ export function TopicForm({ categorySlug }: TopicFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="title">{t("topicTitle")}</Label>
+        <Label htmlFor="title">Title</Label>
         <Input
           id="title"
           name="title"
           required
-          placeholder={t("topicTitlePlaceholder")}
+          placeholder="What would you like to discuss?"
           className="min-h-[44px]"
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="body">{t("topicBody")}</Label>
+        <Label htmlFor="body">Body</Label>
         <Textarea
           id="body"
           name="body"
           required
-          placeholder={t("topicBodyPlaceholder")}
+          placeholder="Share your thoughts, questions, or ideas..."
           rows={6}
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="language">{t("language")}</Label>
-        <Select name="language" defaultValue={locale}>
+        <Label htmlFor="language">Language</Label>
+        <Select name="language" defaultValue="en">
           <SelectTrigger className="min-h-[44px] w-48">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            {Object.entries(localeLabels).map(([key, label]) => (
-              <SelectItem key={key} value={key}>
-                {label}
-              </SelectItem>
-            ))}
+            <SelectItem value="en">English</SelectItem>
+            <SelectItem value="es">Español</SelectItem>
+            <SelectItem value="vi">Tiếng Việt</SelectItem>
+            <SelectItem value="zh">中文</SelectItem>
+            <SelectItem value="ru">Русский</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -91,7 +87,7 @@ export function TopicForm({ categorySlug }: TopicFormProps) {
         </Alert>
       )}
       <Button type="submit" disabled={loading} className="min-h-[44px]">
-        {t("postTopic")}
+        Post Topic
       </Button>
     </form>
   );

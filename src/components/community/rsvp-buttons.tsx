@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { rsvpToEvent, removeRsvp } from "@/lib/events/actions";
 import type { RsvpStatus } from "@/types/database";
@@ -22,7 +21,6 @@ export function RsvpButtons({
   maybeCount,
   isLoggedIn,
 }: RsvpButtonsProps) {
-  const t = useTranslations("rsvp");
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<RsvpStatus | null>(currentStatus);
@@ -76,7 +74,7 @@ export function RsvpButtons({
           className="min-h-[44px]"
           onClick={() => handleRsvp("going")}
         >
-          {t("going")}
+          Going
         </Button>
         <Button
           variant={status === "maybe" ? "default" : "outline"}
@@ -85,7 +83,7 @@ export function RsvpButtons({
           className="min-h-[44px]"
           onClick={() => handleRsvp("maybe")}
         >
-          {t("maybe")}
+          Maybe
         </Button>
         <Button
           variant={status === "not_going" ? "default" : "outline"}
@@ -94,11 +92,11 @@ export function RsvpButtons({
           className="min-h-[44px]"
           onClick={() => handleRsvp("not_going")}
         >
-          {t("notGoing")}
+          Not Going
         </Button>
       </div>
       <p className="text-sm text-muted-foreground">
-        {t("attendees", { going: counts.going, maybe: counts.maybe })}
+        {`${counts.going} going \u00B7 ${counts.maybe} maybe`}
       </p>
     </div>
   );

@@ -8,17 +8,14 @@ export async function signUp(formData: FormData) {
   const supabase = await createClient();
   const headersList = await headers();
   const origin = headersList.get("origin") || process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-  const locale = (formData.get("locale") as string) || "en";
-
   const { error } = await supabase.auth.signUp({
     email: formData.get("email") as string,
     password: formData.get("password") as string,
     options: {
       data: {
         display_name: formData.get("displayName") as string,
-        preferred_locale: locale,
       },
-      emailRedirectTo: `${origin}/${locale}/auth/callback`,
+      emailRedirectTo: `${origin}/auth/callback`,
     },
   });
 
@@ -45,16 +42,15 @@ export async function signIn(formData: FormData) {
   redirect(returnTo);
 }
 
-export async function signInWithGoogle(locale: string, returnTo: string = "/community") {
+export async function signInWithGoogle(returnTo: string = "/community") {
   const supabase = await createClient();
   const headersList = await headers();
   const origin = headersList.get("origin") || process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-  const prefix = locale === "en" ? "" : `/${locale}`;
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: `${origin}${prefix}/auth/callback?returnTo=${encodeURIComponent(returnTo)}`,
+      redirectTo: `${origin}/auth/callback?returnTo=${encodeURIComponent(returnTo)}`,
     },
   });
 
@@ -95,14 +91,13 @@ export async function signOut() {
   redirect("/");
 }
 
-export async function resetPassword(email: string, locale: string) {
+export async function resetPassword(email: string) {
   const supabase = await createClient();
   const headersList = await headers();
   const origin = headersList.get("origin") || process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-  const prefix = locale === "en" ? "" : `/${locale}`;
 
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${origin}${prefix}/auth/reset-password`,
+    redirectTo: `${origin}/auth/reset-password`,
   });
 
   if (error) {

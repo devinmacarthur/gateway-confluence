@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { ProfileCard } from "@/components/community/profile-card";
-import { Link } from "@/lib/i18n/navigation";
+import Link from "next/link";
 import type { ForumTopic } from "@/types/database";
 
 interface TopicRowProps {

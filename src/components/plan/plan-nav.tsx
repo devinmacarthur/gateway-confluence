@@ -1,6 +1,7 @@
 "use client";
 
-import { Link, usePathname } from "@/lib/i18n/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { PlanSectionMeta } from "@/types/plan";
 
 const statusColors = {

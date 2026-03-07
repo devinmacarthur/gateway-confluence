@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ProfileCard } from "@/components/community/profile-card";
-import { Link } from "@/lib/i18n/navigation";
+import Link from "next/link";
 import type { MutualAidPost } from "@/types/database";
 
 const urgencyColors = {

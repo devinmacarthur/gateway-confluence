@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { createReply } from "@/lib/forum/actions";
@@ -14,7 +13,6 @@ interface ReplyFormProps {
 }
 
 export function ReplyForm({ topicId, parentId, onCancel }: ReplyFormProps) {
-  const t = useTranslations("forum");
   const router = useRouter();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -45,13 +43,13 @@ export function ReplyForm({ topicId, parentId, onCancel }: ReplyFormProps) {
       <Textarea
         name="body"
         required
-        placeholder={t("replyPlaceholder")}
+        placeholder="Write your reply..."
         rows={3}
       />
       {error && <p className="text-sm text-destructive">{error}</p>}
       <div className="flex gap-2">
         <Button type="submit" disabled={loading} size="sm" className="min-h-[44px]">
-          {t("postReply")}
+          Post Reply
         </Button>
         {onCancel && (
           <Button

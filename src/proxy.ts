@@ -1,9 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
-import createIntlMiddleware from "next-intl/middleware";
-import { routing } from "@/lib/i18n/routing";
 
-// Routes that require authentication (matched after stripping locale prefix)
+// Routes that require authentication
 const PROTECTED_PATHS = [
   "/community/forum/new",
   "/community/mutual-aid/new",
@@ -13,18 +11,15 @@ const PROTECTED_PATHS = [
 // Routes that redirect authenticated users away
 const AUTH_PATHS = ["/auth/login", "/auth/signup"];
 
-const intlMiddleware = createIntlMiddleware(routing);
-
 export default async function middleware(request: NextRequest) {
-  // Step 1: Run i18n middleware
-  const response = intlMiddleware(request);
+  const response = NextResponse.next();
 
-  // Step 2: If no Supabase URL configured, skip auth (dev without Supabase)
+  // If no Supabase URL configured, skip auth (dev without Supabase)
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
     return response;
   }
 
-  // Step 3: Create Supabase client that reads/writes cookies on request + response
+  // Create Supabase client that reads/writes cookies on request + response
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
@@ -45,39 +40,30 @@ export default async function middleware(request: NextRequest) {
     }
   );
 
-  // Step 4: Refresh the session (must call getUser, not getSession)
+  // Refresh the session (must call getUser, not getSession)
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Step 5: Extract pathname without locale prefix
   const pathname = request.nextUrl.pathname;
-  const localePattern = /^\/(en|es|vi|zh|ru)(\/|$)/;
-  const pathWithoutLocale = pathname.replace(localePattern, "/");
 
-  // Step 6: Protect routes
+  // Protect routes
   const isProtectedPath = PROTECTED_PATHS.some((p) =>
-    pathWithoutLocale.startsWith(p)
+    pathname.startsWith(p)
   );
   const isAuthPath = AUTH_PATHS.some((p) =>
-    pathWithoutLocale.startsWith(p)
+    pathname.startsWith(p)
   );
 
   if (isProtectedPath && !user) {
-    const localeMatch = pathname.match(localePattern);
-    const locale = localeMatch ? localeMatch[1] : "";
-    const prefix = locale ? `/${locale}` : "";
-    const loginUrl = new URL(`${prefix}/auth/login`, request.url);
+    const loginUrl = new URL("/auth/login", request.url);
     loginUrl.searchParams.set("returnTo", pathname);
     return NextResponse.redirect(loginUrl);
   }
 
   if (isAuthPath && user) {
-    const localeMatch = pathname.match(localePattern);
-    const locale = localeMatch ? localeMatch[1] : "";
-    const prefix = locale ? `/${locale}` : "";
     return NextResponse.redirect(
-      new URL(`${prefix}/community`, request.url)
+      new URL("/community", request.url)
     );
   }
 

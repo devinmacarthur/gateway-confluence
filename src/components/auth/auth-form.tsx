@@ -2,7 +2,6 @@
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useTranslations } from "next-intl";
 
 interface AuthFormFieldsProps {
   showDisplayName?: boolean;
@@ -13,13 +12,11 @@ export function AuthFormFields({
   showDisplayName = false,
   showConfirmPassword = false,
 }: AuthFormFieldsProps) {
-  const t = useTranslations("auth");
-
   return (
     <>
       {showDisplayName && (
         <div className="space-y-2">
-          <Label htmlFor="displayName">{t("displayName")}</Label>
+          <Label htmlFor="displayName">Display Name</Label>
           <Input
             id="displayName"
             name="displayName"
@@ -28,11 +25,11 @@ export function AuthFormFields({
             maxLength={50}
             className="min-h-[44px]"
           />
-          <p className="text-xs text-muted-foreground">{t("displayNameHint")}</p>
+          <p className="text-xs text-muted-foreground">This is how others will see you. Real names are not required.</p>
         </div>
       )}
       <div className="space-y-2">
-        <Label htmlFor="email">{t("email")}</Label>
+        <Label htmlFor="email">Email</Label>
         <Input
           id="email"
           name="email"
@@ -42,7 +39,7 @@ export function AuthFormFields({
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="password">{t("password")}</Label>
+        <Label htmlFor="password">Password</Label>
         <Input
           id="password"
           name="password"
@@ -54,7 +51,7 @@ export function AuthFormFields({
       </div>
       {showConfirmPassword && (
         <div className="space-y-2">
-          <Label htmlFor="confirmPassword">{t("confirmPassword")}</Label>
+          <Label htmlFor="confirmPassword">Confirm Password</Label>
           <Input
             id="confirmPassword"
             name="confirmPassword"

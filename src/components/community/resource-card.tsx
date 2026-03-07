@@ -1,7 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { localeLabels } from "@/lib/i18n/routing";
 import type { Resource } from "@/types/community";
+
+const languageLabels: Record<string, string> = {
+  en: "English",
+  es: "Spanish",
+  vi: "Vietnamese",
+  zh: "Chinese",
+  ru: "Russian",
+};
 
 const categoryColors: Record<string, string> = {
   housing: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
@@ -16,15 +23,13 @@ const categoryColors: Record<string, string> = {
 
 export function ResourceCard({
   resource,
-  locale,
   categoryLabel,
 }: {
   resource: Resource;
-  locale: string;
   categoryLabel: string;
 }) {
-  const name = resource.name[locale] || resource.name.en;
-  const description = resource.description[locale] || resource.description.en;
+  const name = resource.name.en;
+  const description = resource.description.en;
 
   return (
     <Card className="h-full">
@@ -72,7 +77,7 @@ export function ResourceCard({
         <div className="flex flex-wrap gap-1 pt-1">
           {resource.languages_spoken.map((lang) => (
             <Badge key={lang} variant="outline" className="text-xs">
-              {localeLabels[lang as keyof typeof localeLabels] || lang}
+              {languageLabels[lang] || lang}
             </Badge>
           ))}
         </div>

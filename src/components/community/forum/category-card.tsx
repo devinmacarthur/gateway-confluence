@@ -1,16 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "@/lib/i18n/navigation";
+import Link from "next/link";
 import type { ForumCategory } from "@/types/database";
 
 interface CategoryCardProps {
   category: ForumCategory;
-  locale: string;
   topicCount?: number;
 }
 
-export function CategoryCard({ category, locale, topicCount }: CategoryCardProps) {
-  const name = category.name[locale] || category.name.en;
-  const description = category.description[locale] || category.description.en;
+export function CategoryCard({ category, topicCount }: CategoryCardProps) {
+  const name = category.name.en;
+  const description = category.description.en;
 
   return (
     <Link href={`/community/forum/${category.slug}`}>

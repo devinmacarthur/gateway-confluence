@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -12,7 +11,6 @@ import {
 } from "@/components/ui/select";
 
 export function AidFilters() {
-  const t = useTranslations("mutualAid");
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -39,7 +37,7 @@ export function AidFilters() {
             className="min-h-[44px]"
             onClick={() => updateFilter("type", type)}
           >
-            {type === "all" ? t("all") : type === "offer" ? t("offer") : t("request")}
+            {type === "all" ? "All" : type === "offer" ? "Offer" : "Request"}
           </Button>
         ))}
       </div>
@@ -49,16 +47,16 @@ export function AidFilters() {
         onValueChange={(v) => updateFilter("category", v)}
       >
         <SelectTrigger className="w-40 min-h-[44px]">
-          <SelectValue placeholder={t("category")} />
+          <SelectValue placeholder="Category" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">{t("all")}</SelectItem>
-          <SelectItem value="food">{t("categories.food")}</SelectItem>
-          <SelectItem value="housing">{t("categories.housing")}</SelectItem>
-          <SelectItem value="transport">{t("categories.transport")}</SelectItem>
-          <SelectItem value="childcare">{t("categories.childcare")}</SelectItem>
-          <SelectItem value="translation">{t("categories.translation")}</SelectItem>
-          <SelectItem value="other">{t("categories.other")}</SelectItem>
+          <SelectItem value="all">All</SelectItem>
+          <SelectItem value="food">Food</SelectItem>
+          <SelectItem value="housing">Housing</SelectItem>
+          <SelectItem value="transport">Transportation</SelectItem>
+          <SelectItem value="childcare">Childcare</SelectItem>
+          <SelectItem value="translation">Translation</SelectItem>
+          <SelectItem value="other">Other</SelectItem>
         </SelectContent>
       </Select>
 
@@ -67,13 +65,13 @@ export function AidFilters() {
         onValueChange={(v) => updateFilter("urgency", v)}
       >
         <SelectTrigger className="w-36 min-h-[44px]">
-          <SelectValue placeholder={t("urgency")} />
+          <SelectValue placeholder="Urgency" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">{t("all")}</SelectItem>
-          <SelectItem value="low">{t("urgencyLevels.low")}</SelectItem>
-          <SelectItem value="normal">{t("urgencyLevels.normal")}</SelectItem>
-          <SelectItem value="urgent">{t("urgencyLevels.urgent")}</SelectItem>
+          <SelectItem value="all">All</SelectItem>
+          <SelectItem value="low">Low</SelectItem>
+          <SelectItem value="normal">Normal</SelectItem>
+          <SelectItem value="urgent">Urgent</SelectItem>
         </SelectContent>
       </Select>
     </div>

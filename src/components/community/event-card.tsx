@@ -1,8 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "@/lib/i18n/navigation";
-import { localeLabels } from "@/lib/i18n/routing";
+import Link from "next/link";
 import type { CommunityEvent } from "@/types/community";
+
+const languageLabels: Record<string, string> = {
+  en: "English",
+  es: "Spanish",
+  vi: "Vietnamese",
+  zh: "Chinese",
+  ru: "Russian",
+};
 
 function formatEventDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -17,13 +24,11 @@ function formatEventDate(dateStr: string): string {
 
 export function EventCard({
   event,
-  locale,
 }: {
   event: CommunityEvent;
-  locale: string;
 }) {
-  const title = event.title[locale] || event.title.en;
-  const description = event.description[locale] || event.description.en;
+  const title = event.title.en;
+  const description = event.description.en;
 
   return (
     <Link href={`/events/${event.id}`}>
@@ -51,7 +56,7 @@ export function EventCard({
           <div className="mt-3 flex flex-wrap gap-1">
             {event.languages.map((lang) => (
               <Badge key={lang} variant="outline" className="text-xs">
-                {localeLabels[lang as keyof typeof localeLabels] || lang}
+                {languageLabels[lang] || lang}
               </Badge>
             ))}
           </div>
