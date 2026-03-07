@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gateway Confluence — Strategic Plan</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root {
+    --primary: #1e40af;
+    --primary-light: #3b82f6;
+    --primary-bg: #eff6ff;
+    --accent-green: #16a34a;
+    --accent-amber: #d97706;
+    --accent-red: #dc2626;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --bg: #ffffff;
+    --bg-muted: #f8fafc;
+    --border: #e2e8f0;
+    --radius: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+    color: white;
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 2.8em; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 1.4em; opacity: 0.85; font-weight: 300; margin-bottom: 16px; }
+  .hero .location { font-size: 0.95em; opacity: 0.6; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* Language bar */
+  .lang-bar {
+    background: var(--bg-muted);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--text-muted);
+  }
+  .lang-bar a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 500;
+  }
+  .lang-bar a:hover { text-decoration: underline; }
+
+  /* TOC */
+  .toc {
+    background: var(--bg-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 32px;
+    margin: 40px 0;
+  }
+  .toc h2 { font-size: 1.1em; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 12px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--primary); text-decoration: none; font-weight: 500; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* Sections */
+  section { margin: 48px 0; }
+  section h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--primary);
+  }
+  section h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    color: var(--text);
+  }
+  section p { margin: 12px 0; color: var(--text); }
+  .lead { font-size: 1.15em; color: var(--text-muted); line-height: 1.8; }
+
+  /* Stats grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .stat-card {
+    text-align: center;
+    background: var(--bg-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 12px;
+  }
+  .stat-card .number { font-size: 2.2em; font-weight: 800; color: var(--primary); }
+  .stat-card .label { font-size: 0.85em; color: var(--text-muted); margin-top: 4px; }
+
+  /* Value cards */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .value-card {
+    border-left: 4px solid var(--primary);
+    background: var(--bg-muted);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px;
+  }
+  .value-card h4 { font-size: 1.05em; font-weight: 700; margin-bottom: 6px; }
+  .value-card p { font-size: 0.9em; color: var(--text-muted); margin: 0; }
+
+  /* Pillar cards */
+  .pillar {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin: 24px 0;
+    background: var(--bg);
+    page-break-inside: avoid;
+  }
+  .pillar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .pillar h3 { margin: 0; font-size: 1.25em; }
+  .priority {
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .priority-critical { background: #fef2f2; color: var(--accent-red); }
+  .priority-high { background: #fffbeb; color: var(--accent-amber); }
+
+  .pillar .context {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    font-size: 0.95em;
+  }
+  .pillar h4 { font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin: 16px 0 8px; }
+  .pillar ul { padding-left: 20px; }
+  .pillar li { margin: 4px 0; font-size: 0.95em; }
+
+  /* Maps */
+  .map-section { margin: 40px 0; }
+  .map-section h2 { border-bottom-color: var(--accent-green); }
+  .map-container {
+    height: 420px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin: 16px 0;
+  }
+  .map-caption { font-size: 0.85em; color: var(--text-muted); text-align: center; margin-top: 8px; }
+
+  /* Resource table */
+  .resource-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9em; }
+  .resource-table th {
+    background: var(--bg-muted);
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+  .resource-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .resource-table tr:hover { background: var(--bg-muted); }
+
+  .cat-badge {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .cat-education { background: #dbeafe; color: #1e40af; }
+  .cat-legal { background: #fae8ff; color: #7c3aed; }
+  .cat-food { background: #dcfce7; color: #16a34a; }
+  .cat-health { background: #fef3c7; color: #d97706; }
+  .cat-housing { background: #fee2e2; color: #dc2626; }
+  .cat-employment { background: #e0e7ff; color: #4338ca; }
+  .cat-youth { background: #ccfbf1; color: #0d9488; }
+  .cat-senior { background: #fce7f3; color: #be185d; }
+
+  /* Get involved */
+  .involve-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .involve-card {
+    background: var(--bg-muted);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border);
+  }
+  .involve-card h4 { font-weight: 700; margin-bottom: 6px; color: var(--primary); }
+  .involve-card p { font-size: 0.9em; color: var(--text-muted); margin: 0; }
+
+  /* Working groups chips */
+  .chip-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .chip {
+    background: var(--primary-bg);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+  }
+
+  /* Footer */
+  .footer {
+    background: #0f172a;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 40px 24px;
+    margin-top: 64px;
+  }
+  .footer .brand { font-size: 1.3em; font-weight: 700; color: white; margin-bottom: 8px; }
+  .footer p { font-size: 0.9em; margin: 4px 0; }
+  .footer .tagline { font-style: italic; color: rgba(255,255,255,0.5); margin-top: 16px; }
+
+  /* Separator */
+  hr { border: none; height: 1px; background: var(--border); margin: 48px 0; }
+
+  /* Print */
+  @media print {
+    .hero { padding: 32px 24px; background: #1e40af !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .lang-bar, .map-section, .leaflet-container { display: none !important; }
+    .container { max-width: 100%; padding: 0 16px; }
+    body { font-size: 11pt; }
+    section { page-break-inside: avoid; }
+    .pillar { page-break-inside: avoid; border: 1px solid #ccc; }
+    .stats { grid-template-columns: repeat(4, 1fr); }
+    .values-grid, .involve-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer { background: #0f172a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 2em; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .values-grid, .involve-grid { grid-template-columns: 1fr; }
+    .map-container { height: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Gateway Confluence</h1>
+  <div class="subtitle">A Community Strategic Plan for East Portland</div>
+  <div class="location">Gateway District &middot; Portland, OR 97220</div>
+</header>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  Also available in:
+  <a href="Gateway-Confluence-Strategic-Plan-ES.md">Espanol</a>
+  <a href="Gateway-Confluence-Strategic-Plan-VI.md">Tieng Viet</a>
+  <a href="Gateway-Confluence-Strategic-Plan-ZH.md">中文</a>
+  <a href="Gateway-Confluence-Strategic-Plan-RU.md">Русский</a>
+  <a href="Gateway-Confluence-Strategic-Plan-LB.md">عربي</a>
+</div>
+
+<div class="container">
+
+<!-- MAP 1: DISTRICT OVERVIEW -->
+<section class="map-section">
+  <h2>Gateway District</h2>
+  <div id="map-overview" class="map-container"></div>
+  <p class="map-caption">Gateway district centered on 1708 NE 106th Ave, Portland &middot; MAX Blue Line transit corridor</p>
+</section>
+
+<!-- TOC -->
+<nav class="toc">
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#who">Who We Are</a></li>
+    <li><a href="#community">Our Community</a></li>
+    <li><a href="#values">Our Values</a></li>
+    <li><a href="#pillars">The Seven Strategic Pillars</a></li>
+    <li><a href="#resources">Community Resources</a></li>
+    <li><a href="#involved">How to Get Involved</a></li>
+    <li><a href="#platform">The Gateway Confluence Platform</a></li>
+  </ol>
+</nav>
+
+<!-- WHO WE ARE -->
+<section id="who">
+  <h2>Who We Are</h2>
+  <p class="lead">Gateway Confluence is a community-driven initiative for East Portland's Gateway district. We are building a transit-centered, culturally plural, economically stable neighborhood &mdash; where longtime residents can remain, small businesses can thrive without displacement, public space fosters belonging, and infrastructure serves daily life rather than speculative growth.</p>
+  <p><strong>This is not a revitalization plan. This is a plan for staying. For the people already here.</strong></p>
+</section>
+
+<hr>
+
+<!-- OUR COMMUNITY -->
+<section id="community">
+  <h2>Our Community</h2>
+  <p>Gateway is one of the most diverse neighborhoods in Oregon:</p>
+  <div class="stats">
+    <div class="stat-card"><div class="number">40+</div><div class="label">Languages spoken</div></div>
+    <div class="stat-card"><div class="number">50K+</div><div class="label">Residents</div></div>
+    <div class="stat-card"><div class="number">500+</div><div class="label">Small businesses</div></div>
+    <div class="stat-card"><div class="number">7</div><div class="label">Strategic pillars</div></div>
+  </div>
+  <p>Gateway's multilingual, multicultural character is our greatest strength. We amplify it &mdash; we don't manage it.</p>
+</section>
+
+<hr>
+
+<!-- VALUES -->
+<section id="values">
+  <h2>Our Values</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <h4>Anti-Displacement</h4>
+      <p>Development must not displace existing residents or businesses. Every project strengthens the community that already exists.</p>
+    </div>
+    <div class="value-card">
+      <h4>Cultural Plurality</h4>
+      <p>Gateway's diversity is not a problem to solve. It is a foundation to build on.</p>
+    </div>
+    <div class="value-card">
+      <h4>Community Governance</h4>
+      <p>Residents make decisions about their own neighborhood. Not advisory. Real power.</p>
+    </div>
+    <div class="value-card">
+      <h4>Infrastructure as Dignity</h4>
+      <p>Childcare, food access, cooling centers, and workforce training are rights, not amenities.</p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <h2>The Seven Strategic Pillars</h2>
+
+  <div class="pillar">
+    <div class="pillar-header">
+      <h3>1. Housing Security Without Displacement</h3>
+      <span class="priority priority-critical">Critical</span>
+    </div>
+    <p class="context">52% of Gateway renters spend more than 30% of their income on rent. 25% spend more than half.</p>
+    <h4>Goals</h4>
+    <ul>
+      <li>Zero net displacement of existing residents</li>
+      <li>200-unit community land trust by 2032</li>
+      <li>Right-of-first-refusal policies for tenants</li>
+      <li>Preserve 1,000+ existing affordable units</li>
+    </ul>
+    <h4>Key Actions</h4>
+    <ul>
+      <li>Establish the Gateway Community Land Trust (GCLT)</li>
+      <li>Tenant protection and right-of-return programs</li>
+      <li>Existing building preservation &mdash; 500 units over 3 years</li>
+      <li>Pathways to housing stability for families</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-header">
+      <h3>2. Small Business Ecosystem</h3>
+      <span class="priority priority-high">High</span>
+    </div>
+    <p class="context">Gateway's small businesses &mdash; food carts, repair shops, salons, grocers &mdash; are the economic and cultural backbone. Most operate on margins of 3&ndash;5%.</p>
+    <h4>Goals</h4>
+    <ul>
+      <li>50 businesses with stable, long-term leases</li>
+      <li>Multilingual business support in 5+ languages</li>
+      <li>$500,000 in micro-grants over 3 years</li>
+      <li>3 worker-owned cooperatives launched</li>
+    </ul>
+    <h4>Key Actions</h4>
+    <ul>
+      <li>Multilingual business support hub</li>
+      <li>Gateway micro-grant and micro-loan program</li>
+      <li>Cooperative development incubator</li>
+      <li>Commercial lease stabilization advocacy</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-header">
+      <h3>3. Public Space Activation</h3>
+      <span class="priority priority-high">High</span>
+    </div>
+    <p class="context">East Portland has 40% less park space per person than the rest of the city. Gateway was built for cars, not people.</p>
+    <h4>Goals</h4>
+    <ul>
+      <li>3 activated public plazas</li>
+      <li>Safe pedestrian corridors connecting transit to daily life</li>
+      <li>Youth-designed spaces in 2+ locations</li>
+      <li>Green buffers along major roads</li>
+    </ul>
+    <h4>Key Actions</h4>
+    <ul>
+      <li>Reimagine the Gateway Transit Plaza</li>
+      <li>Safe crossings at the 10 most dangerous intersections</li>
+      <li>Green gateway corridors &mdash; 500 trees in the first phase</li>
+      <li>Youth-led space design for ages 12&ndash;24</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-header">
+      <h3>4. Community Safety</h3>
+      <span class="priority priority-high">High</span>
+    </div>
+    <p class="context">When residents talk about safety, they talk about dark streets, dangerous crossings, and isolation &mdash; not crime statistics.</p>
+    <h4>Goals</h4>
+    <ul>
+      <li>Comprehensive street lighting throughout the district</li>
+      <li>20 trained multilingual community ambassadors</li>
+      <li>Trauma-informed outreach 7 days per week</li>
+      <li>50% reduction in pedestrian injuries</li>
+    </ul>
+    <h4>Key Actions</h4>
+    <ul>
+      <li>Gateway lighting initiative</li>
+      <li>Community ambassador program</li>
+      <li>Trauma-informed outreach expansion</li>
+      <li>Eyes-on-the-street commercial activation</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-header">
+      <h3>5. Institutional Coherence</h3>
+      <span class="priority priority-high">High</span>
+    </div>
+    <p class="context">15+ public agencies and 30+ nonprofits operate in Gateway &mdash; but only 3 have formal coordination agreements.</p>
+    <h4>Goals</h4>
+    <ul>
+      <li>Resident-led governance council with formal advisory authority</li>
+      <li>Shared community vision adopted by all institutional partners</li>
+      <li>Coordinated investment framework</li>
+      <li>Annual community accountability summit</li>
+    </ul>
+    <h4>Key Actions</h4>
+    <ul>
+      <li>Establish the Gateway Community Governance Council</li>
+      <li>Adopt a shared community vision across agencies</li>
+      <li>Create a coordinated investment framework</li>
+      <li>Host annual accountability summit &mdash; residents ask, institutions answer</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-header">
+      <h3>6. Cultural Visibility</h3>
+      <span class="priority priority-high">High</span>
+    </div>
+    <p class="context">80 countries of origin. 40+ languages. But Gateway's cultural richness is invisible to formal systems.</p>
+    <h4>Goals</h4>
+    <ul>
+      <li>Multilingual wayfinding signage throughout the district</li>
+      <li>10 public art installations by local artists</li>
+      <li>Annual multicultural festival &mdash; 5,000+ attendees</li>
+      <li>Community cultural heritage archive</li>
+    </ul>
+    <h4>Key Actions</h4>
+    <ul>
+      <li>Gateway cultural arts program</li>
+      <li>Multilingual wayfinding system</li>
+      <li>Gateway heritage archive &mdash; collecting oral histories</li>
+      <li>Gateway Cultures Festival &mdash; celebrating every community</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <div class="pillar-header">
+      <h3>7. Shared Infrastructure</h3>
+      <span class="priority priority-critical">Critical</span>
+    </div>
+    <p class="context">Gateway has fundamental infrastructure gaps: childcare, workforce training, food access, and climate resilience.</p>
+    <h4>Goals</h4>
+    <ul>
+      <li>Affordable childcare for 500+ families</li>
+      <li>Workforce training for 1,000 residents per year</li>
+      <li>Community food hub</li>
+      <li>4 cooling and resilience hubs</li>
+      <li>Multilingual mental health services</li>
+    </ul>
+    <h4>Key Actions</h4>
+    <ul>
+      <li>Gateway childcare cooperative network</li>
+      <li>Gateway workforce hub &mdash; multilingual job training</li>
+      <li>Community food hub &mdash; connecting growers, kitchens, and families</li>
+      <li>Cooling centers and resilience hubs for extreme heat</li>
+      <li>Multilingual mental health initiative</li>
+    </ul>
+  </div>
+</section>
+
+<hr>
+
+<!-- MAP 2 + RESOURCES -->
+<section id="resources" class="map-section">
+  <h2>Community Resources</h2>
+  <p>Gateway has a network of trusted organizations serving residents.</p>
+  <div id="map-resources" class="map-container"></div>
+  <p class="map-caption">Community resource locations &middot; Click a pin for details</p>
+
+  <table class="resource-table">
+    <thead>
+      <tr><th>Organization</th><th>Focus</th><th>Languages</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>IRCO</strong><br><small>10301 NE Glisan St</small></td><td><span class="cat-badge cat-education">Education</span></td><td>EN, ES, VI, ZH, RU</td></tr>
+      <tr><td><strong>El Programa Hispano Catolico</strong><br><small>2740 SE Powell Blvd #7</small></td><td><span class="cat-badge cat-legal">Legal</span></td><td>EN, ES</td></tr>
+      <tr><td><strong>Oregon Food Bank &mdash; Gateway</strong><br><small>7900 NE 33rd Dr</small></td><td><span class="cat-badge cat-food">Food</span></td><td>EN, ES, VI, RU</td></tr>
+      <tr><td><strong>Wallace Medical Concern</strong><br><small>12550 SE Stark St</small></td><td><span class="cat-badge cat-health">Health</span></td><td>EN, ES, VI</td></tr>
+      <tr><td><strong>Home Forward</strong><br><small>135 SW Ash St</small></td><td><span class="cat-badge cat-housing">Housing</span></td><td>EN, ES, VI, ZH, RU</td></tr>
+      <tr><td><strong>WorkSystems East Portland</strong><br><small>1001 SE 135th Ave</small></td><td><span class="cat-badge cat-employment">Employment</span></td><td>EN, ES</td></tr>
+      <tr><td><strong>Self Enhancement Inc. (SEI)</strong><br><small>3920 N Kerby Ave</small></td><td><span class="cat-badge cat-youth">Youth</span></td><td>EN</td></tr>
+      <tr><td><strong>East Portland Community Center</strong><br><small>740 SE 106th Ave</small></td><td><span class="cat-badge cat-senior">Senior</span></td><td>EN, ES, VI, ZH, RU</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<hr>
+
+<!-- GET INVOLVED -->
+<section id="involved">
+  <h2>How to Get Involved</h2>
+  <div class="involve-grid">
+    <div class="involve-card">
+      <h4>Volunteer</h4>
+      <p>Join a working group aligned with one of our seven strategic pillars. We need organizers, translators, researchers, and community connectors.</p>
+    </div>
+    <div class="involve-card">
+      <h4>Attend a Meeting</h4>
+      <p>Our monthly community meetings are open to everyone. Interpretation available in Spanish, Vietnamese, Chinese, and Russian. Childcare provided.</p>
+    </div>
+    <div class="involve-card">
+      <h4>Share Your Story</h4>
+      <p>Your experience shapes this plan. Whether you've lived in Gateway for decades or just moved in, your perspective matters.</p>
+    </div>
+    <div class="involve-card">
+      <h4>Spread the Word</h4>
+      <p>Tell your neighbors about Gateway Confluence. Share our website. Invite someone to a meeting. Community power grows one conversation at a time.</p>
+    </div>
+  </div>
+
+  <h3>Working Groups</h3>
+  <div class="chip-grid">
+    <span class="chip">Housing Security</span>
+    <span class="chip">Small Business</span>
+    <span class="chip">Public Space</span>
+    <span class="chip">Community Safety</span>
+    <span class="chip">Governance</span>
+    <span class="chip">Cultural Visibility</span>
+    <span class="chip">Shared Infrastructure</span>
+  </div>
+</section>
+
+<hr>
+
+<!-- PLATFORM -->
+<section id="platform">
+  <h2>The Gateway Confluence Platform</h2>
+  <p>Our online community platform connects neighbors and supports organizing:</p>
+  <div class="values-grid">
+    <div class="value-card" style="border-left-color: var(--accent-green);">
+      <h4>Discussion Forum</h4>
+      <p>Conversations about neighborhood issues, organized by topic.</p>
+    </div>
+    <div class="value-card" style="border-left-color: var(--accent-amber);">
+      <h4>Mutual Aid Board</h4>
+      <p>Offer help or request support: food, housing, transportation, childcare, translation.</p>
+    </div>
+    <div class="value-card" style="border-left-color: var(--primary-light);">
+      <h4>Event Calendar</h4>
+      <p>Community gatherings, workshops, and meetings with RSVP.</p>
+    </div>
+    <div class="value-card" style="border-left-color: var(--accent-red);">
+      <h4>Resource Directory</h4>
+      <p>Verified organizations serving Gateway residents.</p>
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="brand">Gateway Confluence</div>
+  <p>Gateway District, Portland OR 97220</p>
+  <p>Community meetings held monthly &middot; Visit our website for dates and locations</p>
+  <p class="tagline">Built by and for the people who live here. Your voice, your vision matters.</p>
+</footer>
+
+<!-- MAPS SCRIPT -->
+<script>
+(function() {
+  // Map 1: District Overview
+  var overview = L.map('map-overview').setView([45.5222, -122.5558], 14);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18,
+  }).addTo(overview);
+
+  // Gateway center marker
+  L.marker([45.5222, -122.5558]).addTo(overview)
+    .bindPopup('<strong>Gateway Confluence Center</strong><br>1708 NE 106th Ave<br>Portland, OR 97220')
+    .openPopup();
+
+  // Gateway district area (approximate)
+  L.polygon([
+    [45.5350, -122.5750],
+    [45.5350, -122.5350],
+    [45.5050, -122.5350],
+    [45.5050, -122.5750],
+  ], {
+    color: '#1e40af',
+    weight: 2,
+    fillColor: '#3b82f6',
+    fillOpacity: 0.08,
+    dashArray: '6,4',
+  }).addTo(overview).bindPopup('Gateway District');
+
+  // MAX Blue Line (approximate corridor)
+  L.polyline([
+    [45.5308, -122.5639],
+    [45.5267, -122.5558],
+    [45.5222, -122.5500],
+    [45.5189, -122.5420],
+    [45.5150, -122.5300],
+  ], {
+    color: '#2563eb',
+    weight: 4,
+    opacity: 0.7,
+    dashArray: '8,4',
+  }).addTo(overview).bindPopup('MAX Blue Line');
+
+  // Map 2: Resources
+  var resources = L.map('map-resources').setView([45.5250, -122.5900], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18,
+  }).addTo(resources);
+
+  var catColors = {
+    education: '#1e40af',
+    legal: '#7c3aed',
+    food: '#16a34a',
+    health: '#d97706',
+    housing: '#dc2626',
+    employment: '#4338ca',
+    youth: '#0d9488',
+    senior: '#be185d',
+  };
+
+  var orgs = [
+    { name: 'IRCO', cat: 'education', lat: 45.5267, lng: -122.5558, addr: '10301 NE Glisan St', langs: 'EN, ES, VI, ZH, RU' },
+    { name: 'El Programa Hispano Catolico', cat: 'legal', lat: 45.4972, lng: -122.6377, addr: '2740 SE Powell Blvd #7', langs: 'EN, ES' },
+    { name: 'Oregon Food Bank - Gateway', cat: 'food', lat: 45.5689, lng: -122.6278, addr: '7900 NE 33rd Dr', langs: 'EN, ES, VI, RU' },
+    { name: 'Wallace Medical Concern', cat: 'health', lat: 45.5189, lng: -122.5367, addr: '12550 SE Stark St', langs: 'EN, ES, VI' },
+    { name: 'Home Forward', cat: 'housing', lat: 45.5222, lng: -122.6763, addr: '135 SW Ash St', langs: 'EN, ES, VI, ZH, RU' },
+    { name: 'WorkSystems East Portland', cat: 'employment', lat: 45.5167, lng: -122.5256, addr: '1001 SE 135th Ave', langs: 'EN, ES' },
+    { name: 'Self Enhancement Inc. (SEI)', cat: 'youth', lat: 45.5567, lng: -122.6718, addr: '3920 N Kerby Ave', langs: 'EN' },
+    { name: 'East Portland Community Center', cat: 'senior', lat: 45.5156, lng: -122.5558, addr: '740 SE 106th Ave', langs: 'EN, ES, VI, ZH, RU' },
+  ];
+
+  orgs.forEach(function(o) {
+    L.circleMarker([o.lat, o.lng], {
+      radius: 10,
+      fillColor: catColors[o.cat],
+      color: '#fff',
+      weight: 2,
+      fillOpacity: 0.9,
+    }).addTo(resources).bindPopup(
+      '<strong>' + o.name + '</strong><br>' +
+      '<span style="font-size:0.85em;color:#64748b;text-transform:uppercase;">' + o.cat + '</span><br>' +
+      o.addr + '<br>' +
+      '<em>Languages: ' + o.langs + '</em>'
+    );
+  });
+})();
+</script>
+
+</body>
+</html>
