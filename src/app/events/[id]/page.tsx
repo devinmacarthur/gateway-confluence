@@ -20,6 +20,7 @@ const languageLabels: Record<string, string> = {
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString("en-US", {
+    timeZone: "America/Los_Angeles",
     weekday: "long",
     year: "numeric",
     month: "long",
