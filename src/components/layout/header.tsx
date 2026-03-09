@@ -11,6 +11,7 @@ const navItems = [
   { href: "/", key: "home", label: "Home" },
   { href: "/plan", key: "plan", label: "Strategic Plan" },
   { href: "/community", key: "community", label: "Community" },
+  { href: "/map", key: "map", label: "Map" },
   { href: "/resources", key: "resources", label: "Resources" },
   { href: "/events", key: "events", label: "Events" },
   { href: "/get-involved", key: "getInvolved", label: "Get Involved" },
