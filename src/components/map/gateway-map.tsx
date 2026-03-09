@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import type { FeatureCollection } from "geojson";
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 interface GatewayMapProps {
   className?: string;
@@ -20,9 +24,6 @@ export function GatewayMap({ className }: GatewayMapProps) {
 
   useEffect(() => {
     if (!mapRef.current || mapObjRef.current) return;
-
-    const L = require("leaflet");
-    require("leaflet/dist/leaflet.css");
 
     const map = L.map(mapRef.current, {
       center: [45.515, -122.5228],
@@ -56,8 +57,7 @@ export function GatewayMap({ className }: GatewayMapProps) {
 
   useEffect(() => {
     if (!mapObjRef.current || !ready) return;
-    const map: L.Map = mapObjRef.current;
-    const L = require("leaflet");
+    const map = mapObjRef.current;
 
     const layerGroups: Record<string, L.LayerGroup> = {};
 
@@ -65,20 +65,20 @@ export function GatewayMap({ className }: GatewayMapProps) {
       // Neighborhood boundaries
       const nbhRes = await fetch("/gateway-neighborhoods.geojson");
       const nbhData: FeatureCollection = await nbhRes.json();
-      layerGroups.neighborhoods = L.geoJSON(nbhData, {
-        style: (feature: GeoJSON.Feature) => ({
+      layerGroups.neighborhoods = L.geoJSON(nbhData as any, {
+        style: (feature: any) => ({
           color: feature?.properties?.zone === "core" ? "#1e3a5f" : "#6b8cae",
           weight: feature?.properties?.zone === "core" ? 3 : 2,
           fillColor: feature?.properties?.zone === "core" ? "#1e3a5f" : "#6b8cae",
           fillOpacity: feature?.properties?.zone === "core" ? 0.15 : 0.05,
           dashArray: feature?.properties?.zone === "core" ? "" : "5,5",
         }),
-        onEachFeature: (feature: GeoJSON.Feature, layer: L.Layer) => {
+        onEachFeature: (feature: any, layer: any) => {
           if (feature.properties) {
-            (layer as L.Path).bindPopup(
+            layer.bindPopup(
               `<strong>${feature.properties.name}</strong><br>Zone: ${feature.properties.zone === "core" ? "Gateway Core" : "Greater Gateway"}`
             );
-            (layer as L.Path).bindTooltip(feature.properties.name, {
+            layer.bindTooltip(feature.properties.name, {
               permanent: false,
               direction: "center",
               className: "neighborhood-label",
@@ -97,18 +97,18 @@ export function GatewayMap({ className }: GatewayMapProps) {
         "Reynolds School District 7": "#f39c12",
         "Centennial School District 28J": "#9b59b6",
       };
-      layerGroups.schoolDistricts = L.geoJSON(sdData, {
-        style: (feature: GeoJSON.Feature) => ({
+      layerGroups.schoolDistricts = L.geoJSON(sdData as any, {
+        style: (feature: any) => ({
           color: sdColors[feature?.properties?.name] || "#666",
           weight: 3,
           fillColor: sdColors[feature?.properties?.name] || "#666",
           fillOpacity: 0.08,
           dashArray: "8,4",
         }),
-        onEachFeature: (feature: GeoJSON.Feature, layer: L.Layer) => {
+        onEachFeature: (feature: any, layer: any) => {
           if (feature.properties) {
-            (layer as L.Path).bindPopup(`<strong>${feature.properties.name}</strong>`);
-            (layer as L.Path).bindTooltip(feature.properties.name, {
+            layer.bindPopup(`<strong>${feature.properties.name}</strong>`);
+            layer.bindTooltip(feature.properties.name, {
               permanent: false,
               direction: "center",
             });
@@ -120,16 +120,16 @@ export function GatewayMap({ className }: GatewayMapProps) {
       // All Portland neighborhoods (faint background)
       const pdxRes = await fetch("/portland-neighborhoods.geojson");
       const pdxData: FeatureCollection = await pdxRes.json();
-      layerGroups.portland = L.geoJSON(pdxData, {
+      layerGroups.portland = L.geoJSON(pdxData as any, {
         style: () => ({
           color: "#999",
           weight: 1,
           fillColor: "#ccc",
           fillOpacity: 0.02,
         }),
-        onEachFeature: (feature: GeoJSON.Feature, layer: L.Layer) => {
+        onEachFeature: (feature: any, layer: any) => {
           if (feature.properties) {
-            (layer as L.Path).bindTooltip(feature.properties.name, {
+            layer.bindTooltip(feature.properties.name, {
               permanent: false,
               direction: "center",
             });
