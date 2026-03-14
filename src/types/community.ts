@@ -22,7 +22,8 @@ export type ResourceCategory =
   | "education"
   | "employment"
   | "youth"
-  | "senior";
+  | "senior"
+  | "civic";
 
 export interface CommunityEvent {
   id: string;

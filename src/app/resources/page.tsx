@@ -15,6 +15,7 @@ const categoryLabels: Record<string, string> = {
   employment: "Employment",
   youth: "Youth",
   senior: "Senior Services",
+  civic: "Civic & Neighborhood",
 };
 
 export default function ResourcesPage() {
